@@ -547,6 +547,9 @@ $overflow-property-shortcuts: a, h ,s, v;
     @media screen and (max-width:580px) {
       @include typography(24, 29, 700, $primary-color ,$font-family);
     }
+    @media screen and (max-width:320px) {
+      @include typography(22, 25, 700, $primary-color ,$font-family);
+    }
   }
 
   .normal-text{
