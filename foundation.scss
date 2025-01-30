@@ -564,6 +564,15 @@ $overflow-property-shortcuts: a, h ,s, v;
 
   .funnel-text{
     @include typography(36, 43, 600, $primary-color ,$font-family);
+    @media screen and (max-width:1440px) {
+      @include typography(32, 38, 600, $primary-color ,$font-family);
+    }
+    @media screen and (max-width:992px) {
+      @include typography(22, 28, 600, $primary-color ,$font-family);
+    }
+    @media screen and (max-width:580px) {
+      @include typography(16, 19, 600, $primary-color ,$font-family);
+    }
   }
 
   .gray-background{
