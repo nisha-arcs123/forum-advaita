@@ -113,14 +113,14 @@
       display: none;
       @media screen and (max-width: 1072px) {
         display: block;
-        top: 0;
-        right: -250px; /* Initially hidden */
-        width: 250px;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        color: white;
-        transition: right 0.4s ease-in-out;
-        padding-top: 60px;
+        top: -600px;
+        // right: -250px; /* Initially hidden */
+        width: 100%;
+        height: auto;
+        background: rgb(255, 255, 255);
+        // color: white;
+        transition: top 0.4s ease-in-out;
+        padding:60px 0;
         ul {
           list-style: none;
           padding: 0;
@@ -129,19 +129,32 @@
             margin: 20px 0;
             a {
               text-decoration: none;
-              @include typography(20, 26, 500, #ffffff, $font-family);
+              @include typography(20, 26, 500, #262626, $font-family);
+              @media screen and (max-width: 992px) {
+                @include typography(18, 22, 500, #262626, $font-family);
+              }
+              @media screen and (max-width: 768px) {
+                @include typography(16, 20, 500, #262626, $font-family);
+              }
+              @media screen and (max-width: 580px) {
+                @include typography(14, 18, 500, #262626, $font-family);
+              }
             }
           }
         }
         &.active {
-          right: 0;
+          top: 0;
         }
         .close-btn {
-          @include absolute(10, 15, na, na);
-          @include typography(55, 60, 400, #ffffff, $font-family);
+          @include absolute(20,30, na, na);
+          @include typography(55, 60, 400, #262626, $font-family);
           background: none;
           border: none;
           cursor: pointer;
+          @media screen and (max-width: 580px) {
+            @include absolute(10,20, na, na);
+            font-size: 42px;
+          }
         }
       }
     }
