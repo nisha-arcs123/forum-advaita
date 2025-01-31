@@ -502,6 +502,9 @@ $overflow-property-shortcuts: a, h ,s, v;
       margin-bottom: 10px;
      text-align: center;
     }
+    @media screen and (max-width:375px) {
+      @include typography(38, 45, 700, $primary-color ,$font-family);
+    }
   }
 
   .normal-banner-text{
@@ -509,10 +512,12 @@ $overflow-property-shortcuts: a, h ,s, v;
     @media screen and (max-width:1440px) {
       @include typography(12, 17, 400, #444444 ,$font-family);
       margin-bottom: 15px;
+      width: 85%;
     }
     @media screen and (max-width:580px) {
       @include typography(12, 14, 400, #444444 ,$font-family);
       margin-bottom: 20px;
+      width: 100%;
       text-align: center;
     }
   }

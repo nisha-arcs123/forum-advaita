@@ -755,6 +755,15 @@
     text-align: center;
   }
 }
+@media screen and (max-width: 375px) {
+  .largest-banner-text {
+    font-size: 38px;
+    line-height: 45px;
+    font-weight: 700;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
 
 .normal-banner-text {
   font-size: 16px;
@@ -771,6 +780,7 @@
     color: #444444;
     font-family: "Instrument Sans", serif;
     margin-bottom: 15px;
+    width: 85%;
   }
 }
 @media screen and (max-width: 580px) {
@@ -781,6 +791,7 @@
     color: #444444;
     font-family: "Instrument Sans", serif;
     margin-bottom: 20px;
+    width: 100%;
     text-align: center;
   }
 }

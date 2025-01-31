@@ -50,7 +50,7 @@
       }
       .burgerMenu {
         display: none;
-        @media screen and (max-width: 1072px) {
+        @media screen and (max-width: 998px) {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -86,9 +86,9 @@
       .navbar {
         @include navbar(30);
         @include max-width(1440) {
-          gap: 20px;
+          gap: 15px;
         }
-        @include max-width(1072) {
+        @include max-width(998) {
           display: none;
         }
 
@@ -148,41 +148,54 @@
   }
 
   .banner-wrapper {
-    background-image: url("./image/banner.png");
+    // background-image: url("./image/banner.png");
     background-color: #f2f4f9;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    height: 800px;
-    @include flex-box(na, start, center, na, na);
+    // background-repeat: no-repeat;
+    // background-position: bottom;
+    height: 820px;
     padding-left: 135px;
     top: 80px;
     margin-bottom: 80px;
     @media screen and (max-width: 1440px) {
       align-items: start;
+      height: 613px;
+      padding-top: 0;
     }
 
     @media screen and (max-width: 1200px) {
       padding: 70px;
+      padding-top: 0;
+      height: 480px;
     }
     @media screen and (max-width: 992px) {
       padding: 0 40px;
+      height: 600px;
     }
     @media screen and (max-width: 580px) {
       padding: 0 20px;
+      height: 731px;
+      top: 71px;
     }
     @media screen and (max-width: 375px) {
-      top: 0;
-      margin: 0;
+      top: 60px;
+      margin-bottom: 60px;
     }
     .banner-text {
       width: 690px;
       @include flex-box(column, start, start, na, na);
+      padding-top: 205px;
       @media screen and (max-width: 1440px) {
-        width: 500px;
+        width: 488px;
         padding-top: 119px;
       }
       @media screen and (max-width: 580px) {
+        width: 95%;
         @include flex-box(column, center, center, na, na);
+        padding-top: 60px;
+        margin: auto;
+      }
+      @media screen and (max-width: 480px){
+        width: 100%;
       }
       .small-faded-banner-text {
         font-family: "Outfit", serif;
@@ -191,25 +204,64 @@
         font-family: "Outfit", serif;
       }
       .line {
-        @include absolute(192, 70, na, na);
+        @include absolute(394, 70, na, na);
         @include dimensions(16, 376);
         @media screen and (max-width: 1440px) {
           @include dimensions(12, 289);
           @include absolute(271, 19, na, na);
         }
         @media screen and (max-width: 580px) {
-          @include absolute(251, 19, na, na);
+          @include absolute(195, 34, na, na);
+          @include dimensions(12, 280);
         }
-        @media screen and (max-width: 320px) {
-          @include dimensions(16, 241);
-          @include dimensions(12, 248);
+        @media screen and (max-width: 400px) {
+          // @include dimensions(16, 279);
+          @include absolute(250, 25, na, na);
+        }
+        @media screen and (max-width: 375px) {
+          @include dimensions(16, 227);
+          @include absolute(217, 45, na, na);
+        }
+        @media screen and (max-width: 328px) {
+          @include dimensions(16, 190);
+          @include absolute(217, 45, na, na);
         }
       }
       .primary-button {
         justify-content: center;
       }
     }
+   .image-wrapper{
+    img{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+  
+    }
+    .pc{
+      @media screen and (max-width:1440px) {
+        display: none;
+      }
+    }
+    .laptop{
+      display: none;
+      @media screen and (max-width:1440px) {
+        display: block;
+      }
+      @media screen and (max-width:580px) {
+        display: none;
+      }
+    }
+    .mobile{
+      display: none;
+      @media screen and (max-width:580px) {
+        display: block;
+      }
+    }
   }
+  }
+
 
   .img-text-container {
     padding: 120px 130px;
@@ -240,8 +292,9 @@
         @media screen and (max-width: 580px) {
           width: 322px;
         }
-        @media screen and (max-width: 320px) {
-          width: 294px;
+        @media screen and (max-width: 375px) {
+          width: 271px;
+          font-size: 20px;
         }
       }
       .line2 {
@@ -251,7 +304,11 @@
         }
         @media screen and (max-width: 580px) {
           @include dimensions(8, 165);
-          @include absolute(na, na, -12, -16);
+          @include absolute(na, na, -12, -20);
+        }
+        @media screen and (max-width: 375px) {
+          @include dimensions(8, 114);
+          @include absolute(na, na, -5, -4);
         }
       }
       .line3 {
@@ -263,8 +320,12 @@
           @include absolute(na, na, -12, -7);
         }
         @media screen and (max-width: 580px) {
-          @include dimensions(8, 165);
-          @include absolute(na, na, -12, -16);
+          @include dimensions(8, 108);
+          @include absolute(na, na, -8, -6);
+        }
+        @media screen and (max-width: 375px) {
+          @include dimensions(8, 92);
+          @include absolute(na, na, -5, -6);
         }
       }
       .line4 {
@@ -279,17 +340,24 @@
           @include dimensions(8, 165);
           @include absolute(na, 0, -12, na);
         }
+        @media screen and (max-width: 375px) {
+          @include dimensions(8, 143);
+          @include absolute(na, 0, -7, na);
+        }
       }
       @media screen and (max-width: 768px) {
         display: block;
       }
 
-      @media screen and (max-width: 580px) {
-        width: 297px;
+      &.center-small-div{
+        @media screen and (max-width: 580px) {
+          width: 297px;
+        }
+        @media screen and (max-width: 375px) {
+          width: 242px;
+        }
       }
-      @media screen and (max-width: 320px) {
-        width: 275px;
-      }
+     
     }
     &.extra-margin {
       padding-left: 79px;
@@ -989,6 +1057,7 @@
       }
     }
   }
+  
   .footer-container {
     padding: 0 135px;
     border-top: 1px solid #f2f2f2;
@@ -1006,6 +1075,9 @@
       padding: 30px 0;
       @include flex-box(na, space-between, center, wrap, 60);
       @media screen and (max-width: 992px) {
+        gap: 10px;
+      }
+      @media screen and (max-width: 768px) {
         @include flex-box(column, start, start, wrap, 30);
       }
       @media screen and (max-width: 580px) {
@@ -1044,8 +1116,10 @@
           margin: 0;
           width: 400px;
         }
-        @media screen and (max-width: 580px) {
+        @media screen and (max-width: 768px) {
           width: 100%;
+        }
+        @media screen and (max-width: 580px) {
           display: none;
         }
         .need-help {
@@ -1076,8 +1150,10 @@
     .bottom-foot {
       padding-top: 40px;
       padding-bottom: 47px;
-      @include flex-box(na, space-between, start, wrap, 40);
-
+      @include flex-box(na, space-between, start, wrap, na);
+      @media screen and (max-width: 900px){
+        gap: 40px;
+      }
       @media screen and (max-width: 580px) {
         gap: 20px;
         padding: 20px 0px;
@@ -1086,6 +1162,9 @@
         width: 510px;
         @media screen and (max-width: 1720px) {
           width: 290px;
+        }
+        @media screen and (max-width: 900px) {
+          width: 56%;
         }
         @media screen and (max-width: 580px) {
           order: 2;
@@ -1119,7 +1198,7 @@
         .div1-text {
           @include typography(16, 19, 400, #8a8a8a, $font-family);
           @media screen and (max-width: 1440px) {
-            @include typography(13, 15, 500, #8a8a8a, $font-family);
+            @include typography(13, 18, 400, #8a8a8a, $font-family);
           }
           @media screen and (max-width: 580px) {
             @include typography(12, 14, 500, #8a8a8a, $font-family);
@@ -1136,7 +1215,9 @@
             border-radius: 50px;
             cursor: pointer;
             @include flex-box(na, center, center, na, na);
-
+            @media screen and (max-width: 580px) {
+              @include dimensions(28, 28);
+            }
             &:hover {
               background-color: #f6f6f6;
               svg path {
@@ -1184,6 +1265,12 @@
       }
       .div3 {
         width: 300px;
+        @media screen and (max-width: 1250px) {
+          width: 222px;
+        }
+        @media screen and (max-width: 900px){
+          width: 40%;
+        }
         @media screen and (max-width: 580px) {
           order: 4;
           width: 200px;
@@ -1225,7 +1312,10 @@
         }
         @media screen and (max-width: 1200px) {
           padding: 17px;
-          width: 27%;
+          width: 20%;
+        }
+        @media screen and (max-width: 900px){
+          width: 40%;
         }
         @media screen and (max-width: 768px) {
           width: 40%;
@@ -1253,7 +1343,7 @@
         .input-div {
           border-bottom: 1px solid #4c4b47;
 
-          @include flex-box(row, space-between, na, na, na);
+          @include flex-box(row, space-between, center, na, na);
           p {
             @include typography(14, 19, 400, #6f6d66, $font-family);
             margin-bottom: 8px;
@@ -1266,6 +1356,7 @@
           }
           img {
             cursor: pointer;
+            @include dimensions(10,12);
           }
         }
       }
@@ -1283,11 +1374,17 @@
             cursor: pointer;
             padding: 8px;
             @include flex-box(na, center, center, na, na);
-
+            @media screen and (max-width: 580px) {
+              @include dimensions(28, 28);
+              padding: 2px;
+            }
             &:hover {
               background-color: #f6f6f6;
               svg path {
                 fill: #262626;
+                @media screen and (max-width: 580px) {
+                  @include dimensions(12, 12);
+                }
               }
             }
           }
