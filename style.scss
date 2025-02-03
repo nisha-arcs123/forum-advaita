@@ -28,7 +28,7 @@
         @include dimensions(60, na);
       }
       .logo {
-        @include flex-box(row, start, center, na, 10);
+        @include flex-box(na, na, center, na, 10);
         img {
           @media screen and (max-width: 992px) {
             @include dimensions(34, 23);
@@ -113,10 +113,10 @@
       display: none;
       @media screen and (max-width: 1072px) {
         display: block;
-        top: -600px;
+        top: -900px;
         // right: -250px; /* Initially hidden */
         width: 100%;
-        height: auto;
+        height: 100%;
         background: rgb(255, 255, 255);
         // color: white;
         transition: top 0.4s ease-in-out;
@@ -188,6 +188,10 @@
       padding: 0 20px;
       height: 731px;
       top: 71px;
+      margin-bottom: 71px;
+    }
+    @media screen and (max-width: 580px) and (min-width:480px){
+      height: 815px;
     }
     @media screen and (max-width: 375px) {
       top: 60px;
@@ -233,11 +237,10 @@
         }
         @media screen and (max-width: 375px) {
           @include dimensions(16, 227);
-          @include absolute(217, 45, na, na);
+          @include absolute(220, 45, na, na);
         }
         @media screen and (max-width: 328px) {
           @include dimensions(16, 190);
-          @include absolute(217, 45, na, na);
         }
       }
       .primary-button {
@@ -1101,7 +1104,7 @@
       }
 
       .logo {
-        @include flex-box(row, start, center, na, 10);
+        @include flex-box(na,na, center, na, 10);
         img {
           @media screen and (max-width: 992px) {
             @include dimensions(34, 23);

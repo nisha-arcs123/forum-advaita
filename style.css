@@ -758,7 +758,7 @@
 @media screen and (max-width: 375px) {
   .largest-banner-text {
     font-size: 38px;
-    line-height: 45px;
+    line-height: 46px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
@@ -768,7 +768,7 @@
 .normal-banner-text {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 300;
+  font-weight: 400;
   color: #444444;
   font-family: "Instrument Sans", serif;
 }
@@ -1046,8 +1046,6 @@
 }
 .outer-wrapper .header-wrapper .header .logo {
   display: flex;
-  flex-direction: row;
-  justify-content: start;
   align-items: center;
   gap: 10px;
 }
@@ -1174,9 +1172,9 @@
 @media screen and (max-width: 1072px) {
   .outer-wrapper .header-wrapper .menu {
     display: block;
-    top: -600px;
+    top: -900px;
     width: 100%;
-    height: auto;
+    height: 100%;
     background: rgb(255, 255, 255);
     transition: top 0.4s ease-in-out;
     padding: 60px 0;
@@ -1283,6 +1281,12 @@
     padding: 0 20px;
     height: 731px;
     top: 71px;
+    margin-bottom: 71px;
+  }
+}
+@media screen and (max-width: 580px) and (min-width: 480px) {
+  .outer-wrapper .banner-wrapper {
+    height: 815px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -1364,7 +1368,7 @@
     width: 227px;
     height: 16px;
     position: absolute;
-    top: 217px;
+    top: 220px;
     right: 45px;
   }
 }
@@ -1372,9 +1376,6 @@
   .outer-wrapper .banner-wrapper .banner-text .line {
     width: 190px;
     height: 16px;
-    position: absolute;
-    top: 217px;
-    right: 45px;
   }
 }
 .outer-wrapper .banner-wrapper .banner-text .primary-button {
@@ -2682,8 +2683,6 @@
 }
 .outer-wrapper .footer-container .top-foot .logo {
   display: flex;
-  flex-direction: row;
-  justify-content: start;
   align-items: center;
   gap: 10px;
 }
