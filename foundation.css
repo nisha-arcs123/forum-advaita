@@ -133,8 +133,16 @@
   margin-bottom: 10px;
 }
 
+.mt-10 {
+  margin-top: 10px;
+}
+
 .mb-30 {
   margin-bottom: 30px;
+}
+
+.mt-30 {
+  margin-top: 30px;
 }
 
 .margin-1 {
@@ -940,6 +948,68 @@
     line-height: 19px;
     font-weight: 600;
     color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
+
+.build-h3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+  color: #262626;
+  font-family: "Instrument Sans", serif;
+}
+@media screen and (max-width: 1440px) {
+  .build-h3 {
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 600;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
+@media screen and (max-width: 992px) {
+  .build-h3 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
+@media screen and (max-width: 580px) {
+  .build-h3 {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
+
+.build-p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #444444;
+  font-family: "Instrument Sans", serif;
+}
+@media screen and (max-width: 1440px) {
+  .build-p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #444444;
+    font-family: "Instrument Sans", serif;
+  }
+}
+@media screen and (max-width: 992px) {
+  .build-p {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #444444;
     font-family: "Instrument Sans", serif;
   }
 }
