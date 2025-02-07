@@ -2173,11 +2173,6 @@
     font-family: "Instrument Sans", serif;
   }
 }
-@media screen and (max-width: 992px) {
-  .outer-wrapper .funnel-house-header .funnel-text-div .normal-text {
-    margin-bottom: 20px;
-  }
-}
 .outer-wrapper .funnel-house-header .view-mobile {
   display: none;
 }
@@ -2767,17 +2762,17 @@
 }
 @media screen and (max-width: 1200px) {
   .outer-wrapper .building-block {
-    margin: 20px 70px;
+    margin: 30px 70px;
   }
 }
 @media screen and (max-width: 992px) {
   .outer-wrapper .building-block {
-    margin: 20px 40px;
+    margin: 30px 40px;
   }
 }
 @media screen and (max-width: 580px) {
   .outer-wrapper .building-block {
-    margin: 10px 20px;
+    margin: 20px;
   }
 }
 .outer-wrapper .building-block .building-text {
@@ -2787,6 +2782,17 @@
 @media screen and (max-width: 992px) {
   .outer-wrapper .building-block .building-text {
     padding: 20px;
+    width: 57%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-wrapper .building-block .building-text {
+    padding: 12px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-wrapper .building-block .building-text .build-p {
+    margin-top: 5px;
   }
 }
 .outer-wrapper .building-block .builing-img img {
@@ -2850,11 +2856,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-@media screen and (max-width: 580px) {
-  .outer-wrapper .founder1 .divs-count, .outer-wrapper .founder2 .divs-count {
-    margin: 10px 0;
-  }
 }
 .outer-wrapper .founder1 .divs-count .div-01, .outer-wrapper .founder1 .divs-count .div-02, .outer-wrapper .founder2 .divs-count .div-01, .outer-wrapper .founder2 .divs-count .div-02 {
   background-color: #f6f6f6;
@@ -3146,25 +3147,24 @@
 }
 @media screen and (max-width: 1200px) {
   .outer-wrapper .contact-us-wrapper {
-    margin: 0 70px;
+    margin: 30px 70px;
   }
 }
 @media screen and (max-width: 992px) {
   .outer-wrapper .contact-us-wrapper {
-    margin: 0 40px;
+    margin: 30px 40px;
   }
 }
 @media screen and (max-width: 580px) {
   .outer-wrapper .contact-us-wrapper {
-    margin: 0 20px;
+    margin: 30px 20px;
   }
 }
 .outer-wrapper .contact-us-wrapper .contact-img {
-  width: 65%;
+  width: 60%;
 }
 .outer-wrapper .contact-us-wrapper .contact-img img {
-  width: 100%;
-  height: 100%;
+  width: auto;
 }
 .outer-wrapper .contact-us-wrapper .contact-us-detail {
   background-color: #ffffff;
