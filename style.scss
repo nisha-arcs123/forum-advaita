@@ -1069,7 +1069,7 @@
           }
           .arrow-container {
             position: absolute;
-            left: 43%;
+            left: 43.5%;
             bottom: 1px;
             @include flex-box(na, center, center, na, 30);
             #prev,
@@ -1147,6 +1147,9 @@
         .multiple-carousel-img{
           display: flex;
           gap: 18px;
+          .active{
+            border: 1px solid white;
+          }
         }
       }
     }

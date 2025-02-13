@@ -2733,7 +2733,7 @@
 }
 .outer-wrapper .gallery-text-container .modal .carousel-container .carousel .arrow-container {
   position: absolute;
-  left: 43%;
+  left: 43.5%;
   bottom: 1px;
   display: flex;
   justify-content: center;
@@ -2839,6 +2839,9 @@
 .outer-wrapper .gallery-text-container .modal .carousel-container .multiple-carousel-img {
   display: flex;
   gap: 18px;
+}
+.outer-wrapper .gallery-text-container .modal .carousel-container .multiple-carousel-img .active {
+  border: 1px solid white;
 }
 .outer-wrapper .team-info-container {
   display: grid;

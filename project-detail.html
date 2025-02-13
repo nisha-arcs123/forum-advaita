@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>second</title>
+    <title>project details</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,8 +144,7 @@
             </div>
             <div class="carousel-container">
               <div class="carousel">
-                <img id="carousel-image" src="" class="p-rel">
-                  
+                <img id="carousel-image" src="">
                 <div class="arrow-container">
                   <div id="prev">
                     <img src="image/Arrow - Left1.svg" alt="">
@@ -177,13 +176,27 @@
               </div>
               
               <div class="multiple-carousel-img mt-20">
-                <img src="image/image (33).svg" alt="">
-                <img src="image/image (32).svg" alt="">
-                <img src="image/image.png" alt="">
-                <img src="image/image (33).svg" alt="">
-                <img src="image/image (32).svg" alt="">
-                <img src="image/image.png" alt="">
-                <img src="image/image (33).svg" alt="">
+                <div class="active img-1">
+                  <img src="image/image.png" alt="">
+                </div>
+                <div class="img-2">
+                  <img src="image/image (32).svg" alt="" >
+                </div>
+                <div class="img-3">
+                  <img src="image/image (33).svg" alt="" >
+                </div> 
+                <div class="img-4">
+                  <img src="image/image.png" alt="" >
+                </div>
+                <div class="img-5">
+                  <img src="image/image (32).svg" alt="" >
+                </div>
+                <div class="img-6">
+                  <img src="image/image (33).svg" alt="" >
+                </div>
+                <div class="img-7">
+                  <img src="image/image (32).svg" alt="" >
+                </div>
               </div>
             </div>
         </div>
@@ -336,7 +349,7 @@
       <script>
 
         $(document).ready(function() {
-          let images = ["image/Group 37219 (1).svg", "image/Group 37219 (1).svg", "image/Group 37219 (1).svg"];
+          let images = ["image/Group 37221.svg","image/Group 37220.svg","image/Group 37219 (3).svg","image/Group 37221.svg","image/Group 37221.svg"];
           let currentIndex = 0;
       
           $(".clickable-image").click(function() {
@@ -369,7 +382,31 @@
               if (e.key === "Escape") $(".close").click();
           });
       });
-      
+
+
+      const carousel = document.querySelector(".carousel #carousel-image");
+      const smallImgs = document.querySelectorAll(".multiple-carousel-img div");
+      const prev = document.querySelector("#prev");
+      const next = document.querySelector("#next");
+
+      let idx =0;
+      function updateSelection(newIndex) {
+        if (idx !== -1) {
+          smallImgs[idx].classList.remove("active");
+        }
+        idx = newIndex;
+        smallImgs[idx].classList.add("active");
+      }
+
+      next.addEventListener("click", () => {
+          let newIndex = (idx + 1) % smallImgs.length; // Loop forward
+          updateSelection(newIndex);
+      });
+
+      prev.addEventListener("click", () => {
+          let newIndex = (idx - 1 + smallImgs.length) % smallImgs.length; // Loop backward
+          updateSelection(newIndex);
+      });
       </script>
   </body>
 </html>

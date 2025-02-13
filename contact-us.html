@@ -15,6 +15,7 @@
 </head>
 <body class="margin-0 padding-0">
     <div class="outer-wrapper w-full o-h">
+
         <div class="header-wrapper w-full p-fx p-rel z-9">
         <div class="header ">
           <div class="logo">
@@ -93,12 +94,11 @@
                   <div class="text subject mt-12"> 
                     <textarea rows="5" placeholder="Type your message here..." ></textarea>
                   </div>
-                 
-
                   <button class="primary-button mt-20">Submit</button>
                 </form>
             </div>
         </div>
+
         <div class="footer-container">
           <div class="top-foot">
             <div class="logo">
@@ -219,27 +219,27 @@
             <div class="copy-mobile">© 2025 — Copyright</div>
           </div>
         </div>
-      </div>
-  
-      <script>
-        $(document).ready(function () {
-          // Open menu
-          $(".burgerMenu").click(function () {
-            $(".menu").addClass("active");
-          });
-        
-          // Close menu
-          $(".close-btn").click(function () {
-            $(".menu").removeClass("active");
-          });
-        
-          // Close menu when clicking outside
-          $(document).click(function (event) {
-            if (!$(event.target).closest(".menu, .burgerMenu").length) {
-              $(".menu").removeClass("active");
-            }
-          });
+
+    </div>
+    <script>
+      $(document).ready(function () {
+        // Open menu
+        $(".burgerMenu").click(function () {
+          $(".menu").addClass("active");
         });
-      </script>
+      
+        // Close menu
+        $(".close-btn").click(function () {
+          $(".menu").removeClass("active");
+        });
+      
+        // Close menu when clicking outside
+        $(document).click(function (event) {
+          if (!$(event.target).closest(".menu, .burgerMenu").length) {
+            $(".menu").removeClass("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
