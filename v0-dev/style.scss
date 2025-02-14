@@ -1,0 +1,217 @@
+// Variables
+$color-primary: #000;
+$color-secondary: #666;
+$color-background: #fff;
+$spacing-unit: 1rem;
+$max-width: 1440px;
+
+// Mixins
+@mixin container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: $color-primary;
+  background-color: $color-background;
+}
+
+// Header
+.header {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-unit * 2;
+  
+  &__logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  &__nav {
+    display: flex;
+    gap: $spacing-unit * 2;
+    
+    a {
+      text-decoration: none;
+      color: $color-secondary;
+      font-size: 0.9rem;
+      
+      &.active {
+        color: $color-primary;
+      }
+      
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+// Hero
+.hero {
+  height: 60vh;
+  background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202025-02-14%2011-23-27-1mKv7e607jJQZYmIaZdA90Oil9Crb2.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: $spacing-unit * 4;
+  
+  &__title {
+    font-size: 3rem;
+    color: $color-background;
+    margin-bottom: $spacing-unit;
+  }
+  
+  &__meta {
+    color: $color-background;
+    font-size: 0.9rem;
+  }
+}
+
+// Project
+.project {
+  @include container;
+  padding: $spacing-unit * 4 0;
+  
+  &__description {
+    max-width: 800px;
+    margin-bottom: $spacing-unit * 4;
+    
+    p {
+      color: $color-secondary;
+      margin-bottom: $spacing-unit * 2;
+    }
+  }
+  
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .number {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+    .details {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      color: $color-secondary;
+    }
+  }
+}
+
+// Gallery
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-unit;
+  
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+// Contact
+.contact {
+  background-color: #f5f5f5;
+  padding: $spacing-unit * 6 0;
+  
+  &__content {
+    @include container;
+  }
+  
+  &__logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: $spacing-unit * 4;
+  }
+  
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-unit * 4;
+    
+    .info__section {
+      h3 {
+        margin-bottom: $spacing-unit;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+      
+      p, a {
+        color: $color-secondary;
+        text-decoration: none;
+        display: block;
+        margin-bottom: $spacing-unit;
+      }
+    }
+  }
+}
+
+.btn-consultation {
+  background-color: $color-primary;
+  color: $color-background;
+  border: none;
+  padding: $spacing-unit $spacing-unit * 2;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: lighten($color-primary, 20%);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: $spacing-unit;
+    
+    &__nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  .hero {
+    height: 40vh;
+    
+    &__title {
+      font-size: 2rem;
+    }
+  }
+  
+  .project__meta {
+    flex-direction: column;
+    gap: $spacing-unit;
+  }
+}

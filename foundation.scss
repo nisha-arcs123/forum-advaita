@@ -563,12 +563,12 @@ $overflow-property-shortcuts: a, h ,s, v;
   }
 
   .normal-text{
-    @include typography(16, 19, 400, $secondry-text-color ,$font-family);
+    @include typography(16, 25, 400, #535353 ,$font-family);
     @media screen and (max-width:1440px) {
-      @include typography(13, 15, 400, $secondry-text-color ,$font-family);
+      @include typography(13, 20, 400, #535353 ,$font-family);
     }
     @media screen and (max-width:580px) {
-      @include typography(12, 14, 400, $secondry-text-color ,$font-family);
+      @include typography(12, 16, 400, #535353 ,$font-family);
     }
   }
 

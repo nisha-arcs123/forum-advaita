@@ -893,26 +893,26 @@
 
 .normal-text {
   font-size: 16px;
-  line-height: 19px;
+  line-height: 25px;
   font-weight: 400;
-  color: #8A8A8A;
+  color: #535353;
   font-family: "Instrument Sans", serif;
 }
 @media screen and (max-width: 1440px) {
   .normal-text {
     font-size: 13px;
-    line-height: 15px;
+    line-height: 20px;
     font-weight: 400;
-    color: #8A8A8A;
+    color: #535353;
     font-family: "Instrument Sans", serif;
   }
 }
 @media screen and (max-width: 580px) {
   .normal-text {
     font-size: 12px;
-    line-height: 14px;
+    line-height: 16px;
     font-weight: 400;
-    color: #8A8A8A;
+    color: #535353;
     font-family: "Instrument Sans", serif;
   }
 }

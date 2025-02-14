@@ -111,9 +111,10 @@
 
     .menu {
       display: none;
+      opacity: 0;
       @media screen and (max-width: 1072px) {
         display: block;
-        top: -900px;
+        top: -150%;
         // right: -250px; /* Initially hidden */
         width: 100%;
         height: 100%;
@@ -121,6 +122,7 @@
         // color: white;
         transition: top 0.4s ease-in-out;
         padding: 60px 0;
+        opacity: 1;
         ul {
           list-style: none;
           padding: 0;
@@ -372,15 +374,7 @@
         }
       }
     }
-    &.extra-margin {
-      padding-left: 79px;
-      @media screen and (max-width: 1440px) {
-        padding-left: 40px;
-      }
-      @media screen and (max-width: 580px) {
-        padding-left: 20px;
-      }
-    }
+   
     .heading {
       width: 600px;
       margin-bottom: 70px;
@@ -464,19 +458,18 @@
       @media screen and (max-width: 1200px) {
         gap: 40px;
       }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 992px) {
         @include flex-box(column, center, center, na, 49);
       }
       @media screen and (max-width: 580px) {
-        flex-direction: column;
         gap: 20px;
       }
       .img-container {
         @include flex-box(row, start, center, na, 20);
-        width: 50%;
-
+        width: 57%;
+        
         @media screen and (max-width: 1200px) {
-          width: 53%;
+          width: 60%;
           gap: 10px;
         }
         @media screen and (max-width: 992px) {
@@ -487,8 +480,8 @@
           position: relative;
           cursor: pointer;
           display: inline-block;
-          @media screen and (max-width: 580px) {
-            width: auto;
+          @media screen and (max-width: 992px) {
+            width: 100%;
           }
           img {
             width: 100%;
@@ -545,11 +538,14 @@
       }
       .text-container {
         @include flex-box(column, start, start, na, na);
-        width: 50%;
+        width: 53%;
+        @media screen and (max-width: 1440px) {
+          width: 42%;
+        }
         @media screen and (max-width: 1200px) {
           width: 45%;
         }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 992px) {
           width: 100%;
           order: 2;
           @include flex-box(column, center, center, na, na);
@@ -857,17 +853,7 @@
           transform: scale(1.2);
           filter: grayscale(1);
         }
-        .blur-div {
-          p {
-            color: #ffffff;
-            transition: color 0.5 ease-in;
-          }
-          span {
-            color: #ffffff;
-            border-bottom: 1px solid #ffffff;
-            transition: color 0.5 ease-in;
-          }
-        }
+        
       }
       &:hover {
         img {
@@ -879,27 +865,31 @@
 
   .gallery-text-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 19px;
+    row-gap: 15px;
     padding: 0 135px;
     margin-bottom: 166px;
     @media screen and (max-width: 1720px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
-    @media screen and (max-width: 1200px) {
-      padding: 0 70px;
+
+    @media screen and (max-width: 1440px) {
+      grid-template-columns: repeat(2, 1fr);
     }
     @media screen and (max-width: 992px) {
       padding: 0 40px;
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
     }
     @media screen and (max-width: 580px) {
       padding: 0 20px;
       margin-bottom: 60px;
     }
     .gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       overflow: hidden;
+      position: relative;
       @media screen and (max-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -921,51 +911,76 @@
         }
       }
       .text-div {
-        @include flex-box(column, center, na, wrap, na);
-        background-color: #f2f2f2;
-        padding-left: 20px;
-        padding-right: 40px;
-        @media screen and (max-width: 768px) {
-          padding: 70px 90px;
-        }
-        @media screen and (max-width: 580px) {
-          padding: 30px;
-        }
-        @media screen and (max-width: 375px) {
-          padding: 20px 10px;
-        }
-        h1 {
-          @include typography(24, 29, 600, #262626, $font-family);
-          margin: 0;
-          margin-bottom: 15px;
-          text-align: start;
-          @media screen and (max-width: 992px) {
-            @include typography(22, 26, 600, #262626, $font-family);
+        @include flex-box(column, space-between, start, na, na);
+        padding: 30px;
+          position: absolute;
+          top: 0;
+          bottom: 4px;
+          left: 0;
+          right: 0;
+          background: #00000090;
+          opacity: 0;
+          transition: opacity 0.5s ease-in;
+        .text-div-content{
+          @include flex-box(column, na, na, wrap, na);
+          
+          @media screen and (max-width: 768px) {
+            padding: 70px 90px;
           }
           @media screen and (max-width: 580px) {
-            @include typography(18, 21, 600, #262626, $font-family);
+            padding: 30px;
           }
           @media screen and (max-width: 375px) {
-            @include typography(16, 18, 600, #262626, $font-family);
+            padding: 20px 10px;
+          }
+          h1 {
+            @include typography(45, 54, 700, #ffffff, $font-family);
+            margin: 0;
+            margin-bottom: 23px;
+            text-align: start;
+            width: 40%;
+            transform: translateX(-400px);
+            transition: transform .5s ease-out;
+            @media screen and (max-width: 992px) {
+              @include typography(38, 26, 600, #ffffff, $font-family);
+            }
+            @media screen and (max-width: 580px) {
+              @include typography(28, 21, 600, #ffffff, $font-family);
+            }
+            @media screen and (max-width: 375px) {
+              @include typography(22, 18, 600, #ffffff, $font-family);
+            }
+          }
+          p {
+            @include typography(16, 19, 400, #ffffff, $font-family);
+            margin: 0;
+            margin-bottom: 10px;
+            transform: translateX(-400px);
+            transition: transform .4s ease;
+            @media screen and (max-width: 768px) {
+              @include typography(14, 16, 400, #ffffff, $font-family);
+            }
+            @media screen and (max-width: 580px) {
+              @include typography(12, 14, 400, #ffffff, $font-family);
+            }
           }
         }
-        p {
-          @include typography(16, 24, 400, #444444, $font-family);
-          margin: 0;
-          margin-bottom: 10px;
-          @media screen and (max-width: 768px) {
-            @include typography(14, 18, 400, #444444, $font-family);
-          }
-          @media screen and (max-width: 580px) {
-            @include typography(12, 14, 400, #444444, $font-family);
-          }
+
+        button{
+          @include typography(16, 19, 400, #ffffff, $font-family);
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          text-transform: capitalize;
+          transform: translateX(-120px);
+          transition: transform .4s ease;
         }
+       
       }
       &:not(:hover) {
         .img-div {
           img {
             transform: scale(1.2);
-            filter: grayscale(1);
           }
         }
       }
@@ -975,34 +990,20 @@
             transform: scale(1);
           }
         }
-      }
-    }
-
-    .gallery1 {
-      order: 1;
-    }
-    .gallery2 {
-      order: 3;
-    }
-    .gallery3 {
-      order: 2;
-      @media screen and (max-width: 375px) {
-        .text-div {
-          order: 2;
-        }
-        .img-div {
-          order: 1;
-        }
-      }
-    }
-    .gallery4 {
-      order: 4;
-      @media screen and (max-width: 375px) {
-        .text-div {
-          order: 2;
-        }
-        .img-div {
-          order: 1;
+        .text-div{
+          opacity: 1;
+          .text-div-content{
+            h1{
+              transform: translateX(0);
+            }
+            p{
+              transform: translateX(0);
+            }
+            
+          }
+          button{
+            transform: translateX(0);
+          }
         }
       }
     }
@@ -1380,7 +1381,7 @@
         grid-template-columns: repeat(1, 1fr);
       }
       .master {
-        display: inline-block;
+        display: block;
         overflow: hidden;
         position: relative;
         img {
@@ -1390,10 +1391,10 @@
         }
         .overlay-master {
           position: absolute;
-          top: 0;
+          top: 4px;
           left: 0;
           right: 0;
-          bottom: 0;
+          bottom: 4px;
           background: #00000066;
           @include flex-box(row, end, end, na, 20);
           padding-right: 20px;
