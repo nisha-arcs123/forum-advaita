@@ -374,7 +374,7 @@
         }
       }
     }
-   
+
     .heading {
       width: 600px;
       margin-bottom: 70px;
@@ -467,7 +467,7 @@
       .img-container {
         @include flex-box(row, start, center, na, 20);
         width: 57%;
-        
+
         @media screen and (max-width: 1200px) {
           width: 60%;
           gap: 10px;
@@ -853,7 +853,6 @@
           transform: scale(1.2);
           filter: grayscale(1);
         }
-        
       }
       &:hover {
         img {
@@ -865,7 +864,7 @@
 
   .gallery-text-container {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 19px;
     row-gap: 15px;
     padding: 0 135px;
@@ -913,17 +912,17 @@
       .text-div {
         @include flex-box(column, space-between, start, na, na);
         padding: 30px;
-          position: absolute;
-          top: 0;
-          bottom: 4px;
-          left: 0;
-          right: 0;
-          background: #00000090;
-          opacity: 0;
-          transition: opacity 0.5s ease-in;
-        .text-div-content{
+        position: absolute;
+        top: 0;
+        bottom: 4px;
+        left: 0;
+        right: 0;
+        background: #00000090;
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+        .text-div-content {
           @include flex-box(column, na, na, wrap, na);
-          
+
           @media screen and (max-width: 768px) {
             padding: 70px 90px;
           }
@@ -940,7 +939,7 @@
             text-align: start;
             width: 40%;
             transform: translateX(-400px);
-            transition: transform .5s ease-out;
+            transition: transform 0.5s ease-out;
             @media screen and (max-width: 992px) {
               @include typography(38, 26, 600, #ffffff, $font-family);
             }
@@ -956,7 +955,7 @@
             margin: 0;
             margin-bottom: 10px;
             transform: translateX(-400px);
-            transition: transform .4s ease;
+            transition: transform 0.4s ease;
             @media screen and (max-width: 768px) {
               @include typography(14, 16, 400, #ffffff, $font-family);
             }
@@ -966,16 +965,15 @@
           }
         }
 
-        button{
+        button {
           @include typography(16, 19, 400, #ffffff, $font-family);
           border: none;
           background-color: transparent;
           cursor: pointer;
           text-transform: capitalize;
           transform: translateX(-120px);
-          transition: transform .4s ease;
+          transition: transform 0.4s ease;
         }
-       
       }
       &:not(:hover) {
         .img-div {
@@ -990,18 +988,17 @@
             transform: scale(1);
           }
         }
-        .text-div{
+        .text-div {
           opacity: 1;
-          .text-div-content{
-            h1{
+          .text-div-content {
+            h1 {
               transform: translateX(0);
             }
-            p{
+            p {
               transform: translateX(0);
             }
-            
           }
-          button{
+          button {
             transform: translateX(0);
           }
         }
@@ -1145,10 +1142,10 @@
           }
         }
 
-        .multiple-carousel-img{
+        .multiple-carousel-img {
           display: flex;
           gap: 18px;
-          .active{
+          .active {
             border: 1px solid white;
           }
         }
@@ -1561,6 +1558,63 @@
     }
   }
 
+  .about-slider-top {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    display: inline-block;
+
+    .white-box {
+      padding: 40px 135px;
+      position: relative;
+      top: 80px;
+      margin-bottom: 80px;
+      background-color: #f2f2f291;
+      animation: overleyTopSmall .4s ease;
+      backdrop-filter: blur(20px);
+      .white-box-header {
+        @include typography(20, 20, 600, #262626, $font-family);
+        animation: whiteTextLeft 3s ease,whiteTextRight 3s ease;
+      }
+      .white-box-content1 {
+        animation: whiteTextLeft 3s ease,whiteTextRight 3s ease;
+        cursor: pointer;
+        p {
+          display: inline-block;
+          position: relative;
+          margin-bottom: 15px;
+          @include typography(48, 48, 700, #262626, $font-family);
+          &::after {
+            content: "";
+            width: 40px;
+            height: 2px;
+            background: #262626;
+            border-radius: 30px;
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            display: block;
+            transition: width 0.5s ease-in-out;
+          }
+          &:hover {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .black-box {
+      background-color: #000000B2;
+      margin-bottom: 80px;
+      display: inline-block;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      animation: overleyTop 2s ease;
+    }
+  }
   .contact-us-wrapper {
     margin: 40px 135px 120px 135px;
     background-color: #f9f9f9;
@@ -1599,13 +1653,13 @@
     .contact-us-detail {
       background-color: #ffffff;
       padding: 40px;
-      @media screen and (max-width:1440px){
+      @media screen and (max-width: 1440px) {
         padding: 30px;
       }
-      @media screen and (max-width:992px){
+      @media screen and (max-width: 992px) {
         padding: 20px;
       }
-      @media screen and (max-width:580px){
+      @media screen and (max-width: 580px) {
         padding: 15px;
       }
       .build-h3 {
@@ -1615,17 +1669,16 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        @media screen and (max-width:992px){
+        @media screen and (max-width: 992px) {
           margin-top: 8px;
         }
       }
       form {
-        @media screen and (max-width:1440px){
+        @media screen and (max-width: 1440px) {
           margin-top: 30px;
         }
         .text {
           border: 1px solid #e3e3e3;
-          
 
           input,
           textarea {
@@ -1642,9 +1695,8 @@
               @include typography(14, 24, 400, #8a8a8a, $font-family);
             }
           }
-          
         }
-       
+
         button {
           width: 100%;
         }
@@ -1994,5 +2046,42 @@
         }
       }
     }
+  }
+}
+
+@keyframes whiteTextLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-30%);
+  }
+}
+
+@keyframes whiteTextRight {
+  from {
+    transform: translateX(-38%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes overleyTop {
+  0% {
+    height: 0;
+    top: 0;
+  }
+  100% {
+    height: 100vh;
+  }
+}
+
+@keyframes overleyTopSmall {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: auto;
   }
 }
