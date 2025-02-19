@@ -610,10 +610,55 @@
     }
   }
 
+  .blackfunnel-header{
+    background: url('image/Frame 1321314355.svg');
+    margin-top: 80px;
+    height: 230px;
+    padding: 0 135px;
+    @include flex-box(column, center, start, wrap, na);
+    @media screen and (max-width: 1200px) {
+      padding: 0 70px;
+    }
+    @media screen and (max-width: 992px) {
+      padding: 0 40px;
+      @include flex-box(column, center, center, wrap, na);
+    }
+    @media screen and (max-width: 580px) {
+      padding: 0 20px;
+      @include flex-box(column, center, center, wrap, na);
+      margin-top: 71px;
+    }
+    .text {
+      @include flex-box(column, start, start, na, 10);
+      @media screen and (max-width: 992px) {
+        justify-content: space-between;
+      }
+      .funnel-text {
+        margin: 0;
+      }
+      .imges {
+        @include flex-box(na, start, center, na, 10);
+        p {
+          margin: 0;
+          @include typography(24, 29, 500, #b5b5b5, $font-family);
+          @media screen and (max-width: 992px) {
+            @include typography(18, 22, 500, #b5b5b5, $font-family);
+          }
+          @media screen and (max-width: 580px) {
+            @include typography(14, 17, 500, #b5b5b5, $font-family);
+          }
+        }
+        img {
+          margin-right: -5px;
+        }
+      }
+    }
+  }
+
   .funnel-house-header {
     padding: 0 135px;
-    margin-top: 110px;
-    @include flex-box(na, space-between, center, wrap, na);
+    margin-top: 40px;
+    @include flex-box(na,space-between, center, wrap, na);
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
     }
@@ -624,7 +669,32 @@
     @media screen and (max-width: 580px) {
       padding: 0 20px;
       @include flex-box(column, center, center, wrap, na);
-      margin-top: 94px;
+      margin-top: 71px;
+    }
+    .text {
+      @include flex-box(na, start, center, na, 25);
+      @media screen and (max-width: 992px) {
+        justify-content: space-between;
+      }
+      .funnel-text {
+        margin: 0;
+      }
+      .imges {
+        @include flex-box(na, start, center, na, 10);
+        p {
+          margin: 0;
+          @include typography(24, 29, 500, #b5b5b5, $font-family);
+          @media screen and (max-width: 992px) {
+            @include typography(18, 22, 500, #b5b5b5, $font-family);
+          }
+          @media screen and (max-width: 580px) {
+            @include typography(14, 17, 500, #b5b5b5, $font-family);
+          }
+        }
+        img {
+          margin-right: 5px;
+        }
+      }
     }
     .funnel-text-div {
       width: 70%;
@@ -649,34 +719,15 @@
           width: 100%;
         }
       }
-      .text {
-        @include flex-box(na, start, center, na, 25);
-        @media screen and (max-width: 992px) {
-          justify-content: space-between;
-        }
-        .funnel-text {
-          margin: 0;
-        }
-        .imges {
-          @include flex-box(na, start, center, na, 10);
-          p {
-            margin: 0;
-            @include typography(24, 29, 500, #b5b5b5, $font-family);
-            @media screen and (max-width: 992px) {
-              @include typography(18, 22, 500, #b5b5b5, $font-family);
-            }
-            @media screen and (max-width: 580px) {
-              @include typography(14, 17, 500, #b5b5b5, $font-family);
-            }
-          }
-          img {
-            margin-right: 5px;
-          }
+      &.contact-us-text{
+        width: 73%;
+        @media screen and (max-width: 1440px) {
+          width: 100%;
         }
       }
+     
       .normal-text {
         margin: 0;
-        margin-top: 12px;
         @include typography(16, 24, 400, #444444, $font-family);
         @media screen and (max-width: 992px) {
           @include typography(14, 18, 400, #444444, $font-family);
@@ -755,14 +806,30 @@
       justify-content: center;
       margin-top: 16px;
     }
-    .view {
-      @include typography(14, 17, 500, #262626, $font-family);
+    .back-btn{
+      @include dimensions(30,111);
       border-bottom: 1px solid #262626;
-      padding-bottom: 11px;
+       @include flex-box(na,start, center, na, 8);
+       padding-bottom: 5px;
+      .arrw{
+        border: 1px solid #D9D9D9;
+        padding: 6px;
+        @include flex-box(na,center, center, na, na);
+        border-radius: 30px;
+        @include dimensions(30,30);
+      }
+      .view {
+        @include typography(14, 17, 500, #262626, $font-family); 
+        text-transform: capitalize
+      }
     }
+   
     .view2 {
       @include typography(14, 17, 500, #262626, $font-family);
       @include flex-box(na, end, center, na, 10);
+      p{
+        margin: 0;
+      }
       @media screen and (max-width: 580px) {
         display: none;
         @include typography(12, 14, 500, #262626, $font-family);
@@ -837,14 +904,14 @@
             @include typography(13, 14, 600, #262626, $font-family);
           }
         }
-        span {
-          border-bottom: 1px solid #262626;
+        .view-all-project{
+          border: 1px solid #262626;
+          cursor: pointer;
           @include typography(14, 17, 500, #262626, $font-family);
-          padding-bottom: 10px;
-
+          padding: 13px 19px;
+          background-color: #D9D9D903;
           @media screen and (max-width: 992px) {
             @include typography(13, 17, 500, #262626, $font-family);
-            padding-bottom: 5px;
           }
         }
       }
@@ -1282,6 +1349,7 @@
   .founder1,
   .founder2 {
     padding: 0 135px;
+    margin-top: 76px;
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
     }
@@ -1558,13 +1626,123 @@
     }
   }
 
+  .awards-outer-container{
+    margin-top: 40px;
+    margin-bottom: 120px;
+    padding: 0px 135px;
+
+    @include flex-box(na, center, center, na,35);
+    @media screen and (max-width: 1200px) {
+      padding: 0 70px;
+    }
+    @media screen and (max-width: 992px) {
+      padding: 0 40px;
+    }
+    @media screen and (max-width: 580px) {
+      padding: 0 20px;
+    }
+
+    .awards-card{
+      padding: 16px;
+      box-shadow: 0 15px 30px 0 #00000033;
+      // @include dimensions(420,439);
+      .award-img{
+        background: linear-gradient(#FFB800,#FFC53D);
+        // @include dimensions(285,407);
+        @include flex-box(na, center, center, na, na);
+      }
+    }
+  }
+
+  
+  .blog-outer-container{
+    margin-top: 40px;
+    margin-bottom: 120px;
+    padding: 0px 135px;
+
+    @include flex-box(na, center, center, na,35);
+    @media screen and (max-width: 1200px) {
+      padding: 0 70px;
+    }
+    @media screen and (max-width: 992px) {
+      padding: 0 40px;
+    }
+    @media screen and (max-width: 580px) {
+      padding: 0 20px;
+    }
+
+    .blog-card{
+      padding: 16px;
+      box-shadow: 0 0 12px 0 #00000026;
+      // @include dimensions(420,439);
+      .upper-blog-outer{
+        @include flex-box(na,space-between, center, na, na);
+      }
+      .upper-left{
+        @include flex-box(na, start, center, na, na);
+        .profile-div{
+          @include dimensions(48,48);
+          background-color: #A0A09F;
+          @include flex-box(na, center, center, na, na);
+          border-radius: 30px;
+          margin-right: 16px;
+        }
+        .info-blog{
+          h3{
+            @include typography(16,24,600,#262626,$font-family);
+          }
+          span{
+            @include typography(14,24,400,#767676,$font-family);
+            margin-right:10px;
+          }
+        }
+      }
+      .upper-right{
+        @include flex-box(column,end, center, na, 2);
+        span{
+          width: 4px;
+          height: 4px;
+          border-radius: 10px;
+          background-color: #676879;
+        }
+      }
+      .blog-img{
+        background: linear-gradient(#FFB800,#FFC53D);
+        // @include dimensions(285,407);
+        @include flex-box(na, center, center, na, na);
+
+        .on-img-upper{
+          @include flex-box(na, space-between, center, na, na);
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 95%;
+          .upper{
+            @include flex-box(na, start, center, na, 9);
+
+            .first-view, .comment{
+              background-color: #FFFFFF;
+              padding: 4px 13px;
+              @include typography(14,24,500,#444444,$font-family);
+              @include flex-box(na, center, center, na, 9);
+            }
+          }
+          .heart{
+            background-color: #FFFFFF;
+            padding: 7px;
+            border-radius: 20px;
+            @include flex-box(na, center, center, na, 9);
+          }
+        }
+      }
+    }
+  }
   .about-slider-top {
     position: absolute;
     top: 80px;
     width: 100%;
     z-index: 2;
-    display: inline-block;
-    height: 100vh;
+    bottom: 0;
     .white-box {
       padding: 40px 135px;
       position: relative;
@@ -1607,10 +1785,10 @@
     }
     .black-box {
       background-color: #000000B2;
-      margin-bottom: 80px;
+      // margin-bottom: 80px;
       display: inline-block;
       width: 100%;
-      height: 50vh;
+      height: 80%;
       position: absolute;
       animation: overleyTop 2s ease;
     }

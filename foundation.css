@@ -920,16 +920,16 @@
 .funnel-text {
   font-size: 36px;
   line-height: 43px;
-  font-weight: 600;
-  color: #262626;
+  font-weight: 700;
+  color: #F7B415;
   font-family: "Instrument Sans", serif;
 }
 @media screen and (max-width: 1440px) {
   .funnel-text {
     font-size: 32px;
     line-height: 38px;
-    font-weight: 600;
-    color: #262626;
+    font-weight: 700;
+    color: #F7B415;
     font-family: "Instrument Sans", serif;
   }
 }
@@ -937,8 +937,8 @@
   .funnel-text {
     font-size: 22px;
     line-height: 28px;
-    font-weight: 600;
-    color: #262626;
+    font-weight: 700;
+    color: #F7B415;
     font-family: "Instrument Sans", serif;
   }
 }
@@ -946,8 +946,8 @@
   .funnel-text {
     font-size: 16px;
     line-height: 19px;
-    font-weight: 600;
-    color: #262626;
+    font-weight: 700;
+    color: #F7B415;
     font-family: "Instrument Sans", serif;
   }
 }
