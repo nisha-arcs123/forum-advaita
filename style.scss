@@ -1560,16 +1560,16 @@
 
   .about-slider-top {
     position: absolute;
-    top: 0px;
+    top: 80px;
     width: 100%;
     z-index: 2;
     display: inline-block;
-
+    height: 100vh;
     .white-box {
       padding: 40px 135px;
       position: relative;
-      top: 80px;
-      margin-bottom: 80px;
+      // top: 80px;
+      // margin-bottom: 80px;
       background-color: #f2f2f291;
       animation: overleyTopSmall .4s ease;
       backdrop-filter: blur(20px);
@@ -1610,7 +1610,7 @@
       margin-bottom: 80px;
       display: inline-block;
       width: 100%;
-      height: 100vh;
+      height: 50vh;
       position: absolute;
       animation: overleyTop 2s ease;
     }

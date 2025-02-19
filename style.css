@@ -3385,16 +3385,15 @@
 }
 .outer-wrapper .about-slider-top {
   position: absolute;
-  top: 0px;
+  top: 80px;
   width: 100%;
   z-index: 2;
   display: inline-block;
+  height: 100vh;
 }
 .outer-wrapper .about-slider-top .white-box {
   padding: 40px 135px;
   position: relative;
-  top: 80px;
-  margin-bottom: 80px;
   background-color: rgba(242, 242, 242, 0.568627451);
   animation: overleyTopSmall 0.4s ease;
   -webkit-backdrop-filter: blur(20px);
@@ -3442,7 +3441,7 @@
   margin-bottom: 80px;
   display: inline-block;
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   position: absolute;
   animation: overleyTop 2s ease;
 }
