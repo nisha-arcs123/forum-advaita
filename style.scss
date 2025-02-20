@@ -91,22 +91,27 @@
         @include max-width(1440) {
           gap: 15px;
         }
+        margin:0;
         @include max-width(998) {
           display: none;
         }
-
+        &::before,
+        &::after {
+          content: none !important;
+        }
         .nav-items {
           @include nav-items(14, 17, 500, #b5b5b5, $font-family);
 
           @include max-width(1200) {
             font-size: 14px;
           }
+          
           &:hover,
           &.active {
-            color: $primary-color;
+            color: #262626;
           }
           &.active {
-            @include nav-items(14, 17, 600, $primary-text-color, $font-family);
+            @include nav-items(14, 17, 600, #262626, $font-family);
           }
         }
       }
@@ -162,6 +167,53 @@
                 @include dimensions(20,20);
                 img{
                   @include dimensions(15,15);
+                }
+              }
+            }
+
+            .arrow-link-nav{
+              .arrow-link-nav{
+                animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
+                cursor: pointer;
+                a{
+                  text-decoration: none;
+                  display: inline-block;
+                  position: relative;
+                  margin-bottom: 15px;
+                  @include typography(48, 48, 700, #262626, $font-family);
+        
+                  @media screen and (max-width:1440px) {
+                    @include typography(42, 42, 700, #262626, $font-family);
+                  }
+                  @media screen and (max-width:1200px) {
+                    @include typography(38, 38, 700, #262626, $font-family);
+                  }
+                  @media screen and (max-width:992px) {
+                    @include typography(32, 32, 700, #262626, $font-family);
+                  }
+                  @media screen and (max-width:768px) {
+                    @include typography(28, 28, 700, #262626, $font-family);
+                  }
+                  @media screen and (max-width:580px) {
+                    @include typography(22, 22, 700, #262626, $font-family);
+                  }
+                  &::after {
+                    content: "";
+                    width: 40px;
+                    height: 2px;
+                    background: #262626;
+                    border-radius: 30px;
+                    position: absolute;
+                    bottom: -16px;
+                    left: 0;
+                    display: block;
+                    transition: width 0.5s ease-in-out;
+                  }
+                  &:hover {
+                    &::after {
+                      width: 100%;
+                    }
+                  }
                 }
               }
             }
@@ -851,7 +903,7 @@
       @include dimensions(30, 111);
       border-bottom: 1px solid #262626;
       @include flex-box(na, start, center, na, 8);
-      padding-bottom: 5px;
+      padding-bottom: 20px;
       .arrw {
         border: 1px solid #d9d9d9;
         padding: 6px;
@@ -967,6 +1019,12 @@
         img {
           transform: scale(1);
         }
+        .blur-div{
+          .view-all-project{
+            background-color: #262626;
+            color: #FFFFFF;
+          }
+        }
       }
     }
   }
@@ -974,19 +1032,22 @@
   .gallery-text-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 19px;
-    row-gap: 15px;
+    margin-top: 40px;
+    gap: 20px;
+    row-gap: 16px;
+    margin-bottom: 118px;
     padding: 0 135px;
-    margin-bottom: 166px;
-    @media screen and (max-width: 1720px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
     @media screen and (max-width: 1440px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 80px;
+    }
+    @media screen and (max-width: 1200px) {
+      padding: 0 70px;
     }
     @media screen and (max-width: 992px) {
       padding: 0 40px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 20px;
     }
     @media screen and (max-width: 768px) {
       grid-template-columns: repeat(1, 1fr);
@@ -994,10 +1055,14 @@
     @media screen and (max-width: 580px) {
       padding: 0 20px;
       margin-bottom: 60px;
+      margin-top: 20px;
     }
+
     .gallery {
-      overflow: hidden;
+      width: 100%;
       position: relative;
+      display: inline-block;
+      overflow: hidden;
       @media screen and (max-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -1013,9 +1078,7 @@
         }
         img {
           transition: transform 0.5s ease-in-out;
-          @media screen and (max-width: 1720px) {
-            width: 100%;
-          }
+          width: 100%;
         }
       }
       .text-div {
@@ -1810,7 +1873,7 @@
           top: 10px;
           left: 10px;
           width: 95%;
-          z-index: 3;
+          z-index: 1;
           .upper {
             @include flex-box(na, start, center, na, 9);
 
@@ -1896,31 +1959,64 @@
     }
   }
   .about-slider-top {
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 71px;
     width: 100%;
     z-index: 2;
     bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    height: calc(100% - 80px);
+    @media screen and (max-width: 375px) {
+      top: 60px;
+    }
     .white-box {
       padding: 40px 135px;
       position: relative;
       // top: 80px;
       // margin-bottom: 80px;
       background-color: #f2f2f291;
-      animation: overleyTopSmall 0.4s ease;
+      animation: overleyTopSmall .5s ease;
       backdrop-filter: blur(20px);
+      @media screen and (max-width: 1200px) {
+        padding: 40px 70px;
+      }
+      @media screen and (max-width: 992px) {
+        padding:  40px;
+      }
+  
+      @media screen and (max-width: 580px) {
+        padding: 20px;
+      }
       .white-box-header {
         @include typography(20, 20, 600, #262626, $font-family);
-        animation: whiteTextLeft 3s ease, whiteTextRight 3s ease;
+        animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
       }
       .white-box-content1 {
-        animation: whiteTextLeft 3s ease, whiteTextRight 3s ease;
+        animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
         cursor: pointer;
         p {
           display: inline-block;
           position: relative;
           margin-bottom: 15px;
           @include typography(48, 48, 700, #262626, $font-family);
+
+          @media screen and (max-width:1440px) {
+            @include typography(42, 42, 700, #262626, $font-family);
+          }
+          @media screen and (max-width:1200px) {
+            @include typography(38, 38, 700, #262626, $font-family);
+          }
+          @media screen and (max-width:992px) {
+            @include typography(32, 32, 700, #262626, $font-family);
+          }
+          @media screen and (max-width:768px) {
+            @include typography(28, 28, 700, #262626, $font-family);
+          }
+          @media screen and (max-width:580px) {
+            @include typography(22, 22, 700, #262626, $font-family);
+          }
           &::after {
             content: "";
             width: 40px;
@@ -1948,7 +2044,7 @@
       width: 100%;
       height: 80%;
       position: absolute;
-      animation: overleyTop 2s ease;
+      animation: overleyTop .2s ease;
     }
   }
   .contact-us-wrapper {

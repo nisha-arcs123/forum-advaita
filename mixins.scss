@@ -121,7 +121,7 @@
 
 @mixin navbar($gap){
     list-style-type: none;
-    @include flex-box(row, "na", center, "na", $gap);
+    @include flex-box(row, end, center, "na", $gap);
 }
 
 @mixin nav-items($font-size , $line-height , $font-weight , $color, $font-family){
