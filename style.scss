@@ -10,6 +10,7 @@
   .header-wrapper {
     border-bottom: 1px solid $header-border-color;
     background-color: $header-bg-color;
+    z-index: 3;
     .header {
       @include dimensions(80, na);
       @include flex-box(row, space-between, center, "na", "na");
@@ -29,7 +30,6 @@
       }
       .logo {
         @include flex-box(na, na, center, na, 10);
-        z-index: 3;
         img {
           @media screen and (max-width: 992px) {
             @include dimensions(34, 23);
@@ -49,7 +49,7 @@
           }
         }
       }
-      .burgerMenu {
+      .burger {
         display: none;
         @media screen and (max-width: 998px) {
           display: flex;
@@ -58,30 +58,32 @@
           width: 30px;
           height: 20px;
           cursor: pointer;
-          transition: transform 0.3s ease;
           @media screen and (max-width: 375px) {
             width: 20px;
-            height: 15px;
           }
-          .line {
+          span {
             width: 100%;
             height: 3px;
             background-color: #333;
             border-radius: 2px;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
+            display: block;
           }
 
-          .burgerMenu.open .line:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
+          &.active span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
           }
+        
 
-          .burgerMenu.open .line:nth-child(2) {
+          &.active span:nth-child(2) {
             opacity: 0;
           }
+        
 
-          .burgerMenu.open .line:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
+          &.active span:nth-child(3) {
+            transform: translateY(-12px) rotate(-45deg);
           }
+          
         }
       }
       .navbar {
@@ -116,58 +118,92 @@
       @media screen and (max-width: 1072px) {
         display: block;
         top: -150%;
-        // right: -250px; /* Initially hidden */
         width: 100%;
         height: 100%;
-        background: rgb(255, 255, 255);
-        // color: white;
-        transition: top 0.4s ease-in-out;
-        padding: 60px 0;
+        background: linear-gradient(#F0F0F0,#FFFFFF);
+        transition: top 0.3s ease-in;
+        backdrop-filter: blur(150px);
         opacity: 1;
+        @include flex-box(na,start,start,na,na);
         ul {
           list-style: none;
           padding: 0;
-          text-align: center;
+          text-align:start;
+          margin: 0;
+          width: 100%;
+          margin: 40px;
+          @include flex-box(column,start,start,na,na);
           li {
-            margin: 20px 0;
+            padding: 24px 0;
+            border-bottom: 2px solid #FFFFFF;
+            width: 100%;
+            animation: whiteTextRight .6s cubic-bezier(0.4, 0, 1, 1);
+            @include flex-box(na,space-between,center,na,na);
             a {
               text-decoration: none;
-              @include typography(20, 26, 500, #262626, $font-family);
+              @include typography(16, 19, 600, #AEAEAE, $font-family);
               @media screen and (max-width: 992px) {
-                @include typography(18, 22, 500, #262626, $font-family);
-              }
-              @media screen and (max-width: 768px) {
-                @include typography(16, 20, 500, #262626, $font-family);
+                @include typography(14, 19, 600, #AEAEAE, $font-family);
               }
               @media screen and (max-width: 580px) {
-                @include typography(14, 18, 500, #262626, $font-family);
+                @include typography(12, 14, 600, #AEAEAE, $font-family);
               }
+              &.first{
+                color: #262626;
+              }
+            }
+
+            .arrow-link{
+              border: 1px solid #D9D9D9;
+              @include dimensions(30,30);
+              border-radius: 30px;
+              @include flex-box(na,center,center,na,na);
+              @media screen and (max-width: 580px) {
+                @include dimensions(20,20);
+                img{
+                  @include dimensions(15,15);
+                }
+              }
+            }
+            &:first-child {
+              padding-top: 0;
+            }
+            &:last-child {
+              margin-bottom: 0;
+              border-bottom: none;
             }
           }
         }
         &.active {
-          top: 0;
-        }
-        .close-btn {
-          @include absolute(20, 30, na, na);
-          @include typography(55, 60, 400, #262626, $font-family);
-          background: none;
-          border: none;
-          cursor: pointer;
+          top: 80px;
           @media screen and (max-width: 580px) {
-            @include absolute(10, 20, na, na);
-            font-size: 42px;
+            top: 71px;
+            ul{
+              padding: 0px;
+              margin: 20px;
+              li{
+                padding: 12px 0;
+                &:first-child {
+                  padding-top: 0;
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 375px) {
+            top:60px;
+            ul{
+              padding: 0px;
+              margin: 20px;
+            }
           }
         }
       }
+     
     }
   }
 
   .banner-wrapper {
-    // background-image: url("./image/banner.png");
     background-color: #f2f4f9;
-    // background-repeat: no-repeat;
-    // background-position: bottom;
     height: 820px;
     padding-left: 135px;
     top: 80px;
@@ -611,8 +647,8 @@
     }
   }
 
-  .blackfunnel-header{
-    background: url('image/Frame 1321314355.svg');
+  .blackfunnel-header {
+    background: url("image/Frame 1321314355.svg");
     margin-top: 80px;
     height: 230px;
     padding: 0 135px;
@@ -628,7 +664,6 @@
       padding: 0 20px;
       margin-top: 60px;
       height: 130px;
-
     }
     .text {
       @include flex-box(column, start, start, na, 10);
@@ -654,7 +689,7 @@
         img {
           margin-right: -5px;
           @media screen and (max-width: 992px) {
-            @include dimensions(16,16);
+            @include dimensions(16, 16);
           }
         }
       }
@@ -664,7 +699,7 @@
   .funnel-house-header {
     padding: 0 135px;
     margin-top: 40px;
-    @include flex-box(na,space-between, center, wrap, na);
+    @include flex-box(na, space-between, center, wrap, na);
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
     }
@@ -725,13 +760,13 @@
           width: 100%;
         }
       }
-      &.contact-us-text{
+      &.contact-us-text {
         width: 73%;
         @media screen and (max-width: 1440px) {
           width: 100%;
         }
       }
-     
+
       .normal-text {
         margin: 0;
         @include typography(16, 24, 400, #444444, $font-family);
@@ -812,28 +847,28 @@
       justify-content: center;
       margin-top: 16px;
     }
-    .back-btn{
-      @include dimensions(30,111);
+    .back-btn {
+      @include dimensions(30, 111);
       border-bottom: 1px solid #262626;
-       @include flex-box(na,start, center, na, 8);
-       padding-bottom: 5px;
-      .arrw{
-        border: 1px solid #D9D9D9;
+      @include flex-box(na, start, center, na, 8);
+      padding-bottom: 5px;
+      .arrw {
+        border: 1px solid #d9d9d9;
         padding: 6px;
-        @include flex-box(na,center, center, na, na);
+        @include flex-box(na, center, center, na, na);
         border-radius: 30px;
-        @include dimensions(30,30);
+        @include dimensions(30, 30);
       }
       .view {
-        @include typography(14, 17, 500, #262626, $font-family); 
-        text-transform: capitalize
+        @include typography(14, 17, 500, #262626, $font-family);
+        text-transform: capitalize;
       }
     }
-   
+
     .view2 {
       @include typography(14, 17, 500, #262626, $font-family);
       @include flex-box(na, end, center, na, 10);
-      p{
+      p {
         margin: 0;
       }
       @media screen and (max-width: 580px) {
@@ -911,12 +946,12 @@
             @include typography(13, 14, 600, #262626, $font-family);
           }
         }
-        .view-all-project{
+        .view-all-project {
           border: 1px solid #262626;
           cursor: pointer;
           @include typography(14, 17, 500, #262626, $font-family);
           padding: 13px 19px;
-          background-color: #D9D9D903;
+          background-color: #d9d9d903;
           @media screen and (max-width: 992px) {
             @include typography(13, 17, 500, #262626, $font-family);
           }
@@ -1636,14 +1671,14 @@
     }
   }
 
-  .awards-outer-container{
+  .awards-outer-container {
     margin-top: 40px;
     margin-bottom: 120px;
     padding: 0px 135px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 35px;
-    
+
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
       grid-template-columns: 1fr 1fr;
@@ -1661,27 +1696,26 @@
       margin-top: 20px;
     }
 
-    .awards-card{
+    .awards-card {
       padding: 16px;
       box-shadow: 0 0 12px 0 #00000026;
       // @include dimensions(420,439);
-      .award-img{
-        background: linear-gradient(#FFB800,#FFC53D);
+      .award-img {
+        background: linear-gradient(#ffb800, #ffc53d);
         // @include dimensions(285,407);
         @include flex-box(na, center, center, na, na);
       }
     }
   }
 
-  
-  .blog-outer-container{
+  .blog-outer-container {
     margin-top: 40px;
     margin-bottom: 120px;
     padding: 0px 135px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 35px;
-  
+
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
       grid-template-columns: 1fr 1fr;
@@ -1690,7 +1724,7 @@
     @media screen and (max-width: 992px) {
       padding: 0 40px;
     }
-    
+
     @media screen and (max-width: 580px) {
       padding: 0 20px;
       grid-template-columns: 1fr;
@@ -1699,95 +1733,95 @@
       margin-top: 20px;
     }
 
-    .blog-card{
+    .blog-card {
       padding: 16px;
       box-shadow: 0 0 12px 0 #00000026;
       // @include dimensions(420,439);
       overflow: hidden;
-     
-      .upper-blog-outer{
-        @include flex-box(na,space-between, center, na, na);
-      
-      .upper-left{
-        @include flex-box(na, start, center, na, na);
-        .profile-div{
-          @include dimensions(48,48);
-          background-color: #A0A09F;
-          @include flex-box(na, center, center, na, na);
-          border-radius: 30px;
-          margin-right: 16px;
-          @media screen and (max-width: 1440px) {
-            @include dimensions(38,38);
-            margin-right: 8px;
-          }
-          @media screen and (max-width: 580px) {
-            @include dimensions(28,28);
-            img{
-              width: 20px;
-            }
-          }
-        }
-        .info-blog{
-          h3{
-            @include typography(16,24,600,#262626,$font-family);
+
+      .upper-blog-outer {
+        @include flex-box(na, space-between, center, na, na);
+
+        .upper-left {
+          @include flex-box(na, start, center, na, na);
+          .profile-div {
+            @include dimensions(48, 48);
+            background-color: #a0a09f;
+            @include flex-box(na, center, center, na, na);
+            border-radius: 30px;
+            margin-right: 16px;
             @media screen and (max-width: 1440px) {
-              @include typography(14,18,600,#262626,$font-family);
+              @include dimensions(38, 38);
+              margin-right: 8px;
             }
-            @media screen and (max-width: 992px) {
-              @include typography(12,14,600,#262626,$font-family);
+            @media screen and (max-width: 580px) {
+              @include dimensions(28, 28);
+              img {
+                width: 20px;
+              }
             }
           }
-          span{
-            @include typography(14,24,400,#767676,$font-family);
-            margin-right:10px;
-            @media screen and (max-width: 1200px) {
-              @include typography(12,24,400,#767676,$font-family);
-              margin-right: 5px;
+          .info-blog {
+            h3 {
+              @include typography(16, 24, 600, #262626, $font-family);
+              @media screen and (max-width: 1440px) {
+                @include typography(14, 18, 600, #262626, $font-family);
+              }
+              @media screen and (max-width: 992px) {
+                @include typography(12, 14, 600, #262626, $font-family);
+              }
             }
-          
+            span {
+              @include typography(14, 24, 400, #767676, $font-family);
+              margin-right: 10px;
+              @media screen and (max-width: 1200px) {
+                @include typography(12, 24, 400, #767676, $font-family);
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+        .upper-right {
+          @include flex-box(column, end, center, na, 2);
+          span {
+            @include dimensions(4, 4);
+            border-radius: 10px;
+            background-color: #676879;
+            @media screen and (max-width: 768px) {
+              @include dimensions(3, 3);
+            }
           }
         }
       }
-      .upper-right{
-        @include flex-box(column,end, center, na, 2);
-        span{
-         @include dimensions(4,4);
-          border-radius: 10px;
-          background-color: #676879;
-          @media screen and (max-width: 768px) {
-            @include dimensions(3,3);
-          }
-        }
-      }
-      }
-      .blog-img{
+      .blog-img {
         // @include dimensions(285,407);
         @include flex-box(na, center, center, na, na);
         overflow: hidden;
         position: relative;
         cursor: pointer;
         display: inline-block;
-        img{
-          width: 100%;    
+        img {
+          width: 100%;
           transition: transform 0.5s ease-in-out;
         }
-        .on-img-upper{
+        .on-img-upper {
           @include flex-box(na, space-between, center, na, na);
           position: absolute;
           top: 10px;
           left: 10px;
           width: 95%;
           z-index: 3;
-          .upper{
+          .upper {
             @include flex-box(na, start, center, na, 9);
 
-            .first-view, .comment{
-              background-color: #FFFFFF;
+            .first-view,
+            .comment {
+              background-color: #ffffff;
               padding: 4px 13px;
-              @include typography(14,24,500,#444444,$font-family);
+              @include typography(14, 24, 500, #444444, $font-family);
               @include flex-box(na, center, center, na, 9);
-              @media screen and (max-width:768px) {
-                @include typography(12,18,500,#444444,$font-family);
+              @media screen and (max-width: 768px) {
+                @include typography(12, 18, 500, #444444, $font-family);
                 padding: 2px 5px;
               }
             }
@@ -1800,20 +1834,19 @@
             @include flex-box(row, center, center, na, na);
             transition: transform 0.3s ease-in;
 
-            @media screen and (max-width:768px) {
+            @media screen and (max-width: 768px) {
               @include dimensions(26, 26);
             }
             .heart2 {
               display: none;
               transform: translateX(-200px);
               transition: transform 0.5s ease-in, display 0.5s ease-in;
-              
             }
-           
-            img{
-              @include dimensions(18,18);
-              @media screen and (max-width:768px) {
-                @include dimensions(13,13);
+
+            img {
+              @include dimensions(18, 18);
+              @media screen and (max-width: 768px) {
+                @include dimensions(13, 13);
               }
             }
             // p {
@@ -1823,15 +1856,14 @@
             //   transition: transform 0.5s ease-in-out, display 0.5s ease-in;
             //   @include typography(12, 14, 600, #ffffff, $font-family);
             // }
-           
+
             &:hover {
               .heart1 {
                 display: none;
               }
-              .heart2{
+              .heart2 {
                 display: block;
                 transform: translateX(0px);
-                
               }
               // p {
               //   display: block;
@@ -1843,13 +1875,11 @@
             transition: transform 0.4s ease-in;
           }
         }
-
-       
       }
 
       &:not(:hover) {
-        .blog-img{
-          img{
+        .blog-img {
+          img {
             transform: scale(1.2); /* Zoom In */
             filter: grayscale(1);
           }
@@ -1857,8 +1887,8 @@
       }
       &:hover {
         box-shadow: 0 15px 40px 0 #00000033;
-        .blog-img{
-          img{
+        .blog-img {
+          img {
             transform: scale(1);
           }
         }
@@ -1877,14 +1907,14 @@
       // top: 80px;
       // margin-bottom: 80px;
       background-color: #f2f2f291;
-      animation: overleyTopSmall .4s ease;
+      animation: overleyTopSmall 0.4s ease;
       backdrop-filter: blur(20px);
       .white-box-header {
         @include typography(20, 20, 600, #262626, $font-family);
-        animation: whiteTextLeft 3s ease,whiteTextRight 3s ease;
+        animation: whiteTextLeft 3s ease, whiteTextRight 3s ease;
       }
       .white-box-content1 {
-        animation: whiteTextLeft 3s ease,whiteTextRight 3s ease;
+        animation: whiteTextLeft 3s ease, whiteTextRight 3s ease;
         cursor: pointer;
         p {
           display: inline-block;
@@ -1912,7 +1942,7 @@
       }
     }
     .black-box {
-      background-color: #000000B2;
+      background-color: #000000b2;
       // margin-bottom: 80px;
       display: inline-block;
       width: 100%;
@@ -1928,7 +1958,7 @@
     display: grid;
     grid-template-columns: 58.5% 38.5%;
     gap: 40px;
-   
+
     @media screen and (max-width: 1440px) {
       padding: 30px;
       gap: 30px;
