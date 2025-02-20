@@ -621,17 +621,19 @@
     }
     @media screen and (max-width: 992px) {
       padding: 0 40px;
-      @include flex-box(column, center, center, wrap, na);
+      height: 200px;
     }
     @media screen and (max-width: 580px) {
       padding: 0 20px;
-      @include flex-box(column, center, center, wrap, na);
-      margin-top: 71px;
+      margin-top: 60px;
+      height: 130px;
+
     }
     .text {
       @include flex-box(column, start, start, na, 10);
       @media screen and (max-width: 992px) {
         justify-content: space-between;
+        gap: 5px;
       }
       .funnel-text {
         margin: 0;
@@ -650,6 +652,9 @@
         }
         img {
           margin-right: -5px;
+          @media screen and (max-width: 992px) {
+            @include dimensions(16,16);
+          }
         }
       }
     }
@@ -669,7 +674,7 @@
     @media screen and (max-width: 580px) {
       padding: 0 20px;
       @include flex-box(column, center, center, wrap, na);
-      margin-top: 71px;
+      margin-top: 20px;
     }
     .text {
       @include flex-box(na, start, center, na, 25);
@@ -862,6 +867,7 @@
     @media screen and (max-width: 580px) {
       padding: 0 20px;
       margin-bottom: 60px;
+      margin-top: 20px;
     }
 
     .gallery-images {
@@ -1245,6 +1251,8 @@
     }
     @media screen and (max-width: 580px) {
       padding: 0 20px;
+      margin-bottom: 60px;
+      margin-top: 20px;
     }
 
     .team {
@@ -1431,6 +1439,7 @@
     }
     @media screen and (max-width: 580px) {
       padding: 0 20px;
+      margin-bottom: 60px;
     }
     .master-grid-gallery {
       display: grid;
@@ -1632,19 +1641,31 @@
     padding: 0px 135px;
 
     @include flex-box(na, center, center, na,35);
+    @media screen and (max-width:1440px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 25px;
+    }
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
     @media screen and (max-width: 992px) {
       padding: 0 40px;
+      gap: 15px;
     }
     @media screen and (max-width: 580px) {
       padding: 0 20px;
+      margin-bottom: 60px;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 20px;
     }
 
     .awards-card{
       padding: 16px;
-      box-shadow: 0 15px 30px 0 #00000033;
+      box-shadow: 0 0 12px 0 #00000026;
       // @include dimensions(420,439);
       .award-img{
         background: linear-gradient(#FFB800,#FFC53D);
@@ -1661,23 +1682,38 @@
     padding: 0px 135px;
 
     @include flex-box(na, center, center, na,35);
+   
+    @media screen and (max-width:1440px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 25px;
+    }
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
     @media screen and (max-width: 992px) {
       padding: 0 40px;
     }
+    
     @media screen and (max-width: 580px) {
       padding: 0 20px;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 60px;
+      margin-top: 20px;
     }
 
     .blog-card{
       padding: 16px;
       box-shadow: 0 0 12px 0 #00000026;
       // @include dimensions(420,439);
+      overflow: hidden;
+     
       .upper-blog-outer{
         @include flex-box(na,space-between, center, na, na);
-      }
+      
       .upper-left{
         @include flex-box(na, start, center, na, na);
         .profile-div{
@@ -1686,37 +1722,68 @@
           @include flex-box(na, center, center, na, na);
           border-radius: 30px;
           margin-right: 16px;
+          @media screen and (max-width: 1440px) {
+            @include dimensions(38,38);
+            margin-right: 8px;
+          }
+          @media screen and (max-width: 580px) {
+            @include dimensions(28,28);
+            img{
+              width: 20px;
+            }
+          }
         }
         .info-blog{
           h3{
             @include typography(16,24,600,#262626,$font-family);
+            @media screen and (max-width: 1440px) {
+              @include typography(14,18,600,#262626,$font-family);
+            }
+            @media screen and (max-width: 992px) {
+              @include typography(12,14,600,#262626,$font-family);
+            }
           }
           span{
             @include typography(14,24,400,#767676,$font-family);
             margin-right:10px;
+            @media screen and (max-width: 1200px) {
+              @include typography(12,24,400,#767676,$font-family);
+              margin-right: 5px;
+            }
+          
           }
         }
       }
       .upper-right{
         @include flex-box(column,end, center, na, 2);
         span{
-          width: 4px;
-          height: 4px;
+         @include dimensions(4,4);
           border-radius: 10px;
           background-color: #676879;
+          @media screen and (max-width: 768px) {
+            @include dimensions(3,3);
+          }
         }
       }
+      }
       .blog-img{
-        background: linear-gradient(#FFB800,#FFC53D);
         // @include dimensions(285,407);
         @include flex-box(na, center, center, na, na);
-
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        img{
+          width: 100%;    
+          transition: transform 0.5s ease-in-out;
+        }
         .on-img-upper{
           @include flex-box(na, space-between, center, na, na);
           position: absolute;
           top: 10px;
           left: 10px;
           width: 95%;
+          z-index: 3;
           .upper{
             @include flex-box(na, start, center, na, 9);
 
@@ -1725,13 +1792,69 @@
               padding: 4px 13px;
               @include typography(14,24,500,#444444,$font-family);
               @include flex-box(na, center, center, na, 9);
+              @media screen and (max-width:768px) {
+                @include typography(12,18,500,#444444,$font-family);
+                padding: 2px 5px;
+              }
             }
           }
-          .heart{
-            background-color: #FFFFFF;
-            padding: 7px;
-            border-radius: 20px;
-            @include flex-box(na, center, center, na, 9);
+          .heart {
+            background-color: #ffffff4d;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            @include dimensions(36, 36);
+            @include flex-box(row, center, center, na, na);
+            transition: transform 0.3s ease-in;
+            .heart2 {
+              display: none;
+              transform: translateX(-200px);
+              transition: transform 0.5s ease-in, display 0.5s ease-in;
+            }
+            // p {
+            //   display: none;
+            //   position: absolute;
+            //   transform: translateY(-40px);
+            //   transition: transform 0.5s ease-in-out, display 0.5s ease-in;
+            //   @include typography(12, 14, 600, #ffffff, $font-family);
+            // }
+            img {
+              @include dimensions(18, 18);
+            }
+            &:hover {
+              .heart1 {
+                display: none;
+              }
+              .heart2{
+                display: block;
+                transform: translateX(0px);
+              }
+              p {
+                display: block;
+                transform: translateY(40px);
+              }
+            }
+          }
+          .heart {
+            transition: transform 0.4s ease-in;
+          }
+        }
+
+       
+      }
+
+      &:not(:hover) {
+        .blog-img{
+          img{
+            transform: scale(1.2); /* Zoom In */
+            filter: grayscale(1);
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 0 15px 40px 0 #00000033;
+        .blog-img{
+          img{
+            transform: scale(1);
           }
         }
       }
@@ -1800,11 +1923,8 @@
     display: grid;
     grid-template-columns: 58.5% 38.5%;
     gap: 40px;
-    @media screen and (max-width: 1810px) {
-      // grid-template-columns: 60% 37%;
-    }
+   
     @media screen and (max-width: 1440px) {
-      // grid-template-columns: 55% 40%;
       padding: 30px;
       gap: 30px;
     }
@@ -1818,7 +1938,7 @@
       gap: 20px;
     }
     @media screen and (max-width: 580px) {
-      margin: 30px 20px;
+      margin: 20px;
       padding: 15px;
     }
     .contact-img {
