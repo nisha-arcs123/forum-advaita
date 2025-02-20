@@ -48,7 +48,7 @@
           </div>
         </div>
         <nav class="menu p-fx">
-          <button class="close-btn">&times;</button>
+          <!-- <button class="close-btn">&times;</button> -->
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -529,6 +529,13 @@
             $(".menu").removeClass("active");
           }
         });
+      });
+    </script>
+
+
+    <script>
+      document.getElementById("burgerMenu").addEventListener("click", function () {
+        this.classList.toggle("active"); // Toggle class on click
       });
     </script>
   </body>

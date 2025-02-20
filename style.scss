@@ -29,6 +29,7 @@
       }
       .logo {
         @include flex-box(na, na, center, na, 10);
+        z-index: 3;
         img {
           @media screen and (max-width: 992px) {
             @include dimensions(34, 23);
@@ -1639,13 +1640,10 @@
     margin-top: 40px;
     margin-bottom: 120px;
     padding: 0px 135px;
-
-    @include flex-box(na, center, center, na,35);
-    @media screen and (max-width:1440px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 25px;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+    
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
       grid-template-columns: 1fr 1fr;
@@ -1680,14 +1678,10 @@
     margin-top: 40px;
     margin-bottom: 120px;
     padding: 0px 135px;
-
-    @include flex-box(na, center, center, na,35);
-   
-    @media screen and (max-width:1440px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 25px;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+  
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
       grid-template-columns: 1fr 1fr;
@@ -1805,10 +1799,22 @@
             @include dimensions(36, 36);
             @include flex-box(row, center, center, na, na);
             transition: transform 0.3s ease-in;
+
+            @media screen and (max-width:768px) {
+              @include dimensions(26, 26);
+            }
             .heart2 {
               display: none;
               transform: translateX(-200px);
               transition: transform 0.5s ease-in, display 0.5s ease-in;
+              
+            }
+           
+            img{
+              @include dimensions(18,18);
+              @media screen and (max-width:768px) {
+                @include dimensions(13,13);
+              }
             }
             // p {
             //   display: none;
@@ -1817,9 +1823,7 @@
             //   transition: transform 0.5s ease-in-out, display 0.5s ease-in;
             //   @include typography(12, 14, 600, #ffffff, $font-family);
             // }
-            img {
-              @include dimensions(18, 18);
-            }
+           
             &:hover {
               .heart1 {
                 display: none;
@@ -1827,11 +1831,12 @@
               .heart2{
                 display: block;
                 transform: translateX(0px);
+                
               }
-              p {
-                display: block;
-                transform: translateY(40px);
-              }
+              // p {
+              //   display: block;
+              //   transform: translateY(40px);
+              // }
             }
           }
           .heart {
