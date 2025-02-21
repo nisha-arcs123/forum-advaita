@@ -910,11 +910,11 @@
     }
     .back-btn {
       @include dimensions(30, 111);
-      border-bottom: 1px solid #262626;
+      // border-bottom: 1px solid #262626;
       @include flex-box(na, start, center, na, 8);
       padding-bottom: 20px;
       .arrw {
-        border: 1px solid #d9d9d9;
+        // border: 1px solid #d9d9d9;
         padding: 6px;
         @include flex-box(na, center, center, na, na);
         border-radius: 30px;
@@ -1144,8 +1144,8 @@
               @include typography(12, 14, 400, #ffffff, $font-family);
             }
           }
+          
         }
-
         button {
           @include typography(16, 19, 400, #ffffff, $font-family);
           border: none;
@@ -1154,6 +1154,63 @@
           text-transform: capitalize;
           transform: translateX(-120px);
           transition: transform 0.4s ease;
+        }
+        .like-share-div {
+          position: absolute;
+          display: flex;
+          gap: 17px;
+          left: 30px;
+          bottom: 25px;
+          .heart,
+          .share {
+            background-color: #ffffff4d;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            // @include dimensions(36, 36);
+            @include flex-box(row, center, center, na, na);
+            transition: transform 0.3s ease-in;
+            padding: 12px;
+            img{
+              @include dimensions(24,24);
+            }
+            .heart2,
+            .send2 {
+              display: none;
+              transform: translateX(-200px);
+              transition: transform 0.5s ease-in, display 0.5s ease-in;
+            }
+            p {
+              display: none;
+              position: absolute;
+              transform: translateY(-40px);
+              transition: transform 0.5s ease-in-out, display 0.5s ease-in;
+              @include typography(12, 14, 600, #ffffff, $font-family);
+            }
+            img {
+              @include dimensions(18, 18);
+            }
+            &:hover {
+              .heart1,
+              .send1 {
+                display: none;
+              }
+              .heart2,
+              .send2 {
+                display: block;
+                transform: translateX(0px);
+              }
+              p {
+                display: block;
+                transform: translateY(40px);
+              }
+            }
+          }
+          .heart {
+            transition: transform 0.4s ease-in;
+          }
+          .share {
+            transition: transform 0.5s ease-in;
+          }
         }
       }
       &:not(:hover) {
@@ -1280,6 +1337,7 @@
               border: 1px solid #ffffff;
               border-radius: 50%;
               // @include dimensions(36, 36);
+              padding: 12px;
               @include flex-box(row, center, center, na, na);
               transition: transform 0.3s ease-in;
               img{
@@ -2005,45 +2063,48 @@
         @include typography(20, 20, 600, #262626, $font-family);
         animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
       }
-      .white-box-content1 {
-        animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
-        cursor: pointer;
-        p {
-          display: inline-block;
-          position: relative;
-          margin-bottom: 15px;
-          @include typography(48, 48, 700, #262626, $font-family);
-
-          @media screen and (max-width:1440px) {
-            @include typography(42, 42, 700, #262626, $font-family);
-          }
-          @media screen and (max-width:1200px) {
-            @include typography(38, 38, 700, #262626, $font-family);
-          }
-          @media screen and (max-width:992px) {
-            @include typography(32, 32, 700, #262626, $font-family);
-          }
-          @media screen and (max-width:768px) {
-            @include typography(28, 28, 700, #262626, $font-family);
-          }
-          @media screen and (max-width:580px) {
-            @include typography(22, 22, 700, #262626, $font-family);
-          }
-          &::after {
-            content: "";
-            width: 40px;
-            height: 2px;
-            background: #262626;
-            border-radius: 30px;
-            position: absolute;
-            bottom: -16px;
-            left: 0;
-            display: block;
-            transition: width 0.5s ease-in-out;
-          }
-          &:hover {
+      .white-box-container{
+        @include flex-box(column,start,start,na,30);
+        .white-box-content1 {
+          animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
+          cursor: pointer;
+          p {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+            @include typography(48, 48, 700, #262626, $font-family);
+  
+            @media screen and (max-width:1440px) {
+              @include typography(42, 42, 700, #262626, $font-family);
+            }
+            @media screen and (max-width:1200px) {
+              @include typography(38, 38, 700, #262626, $font-family);
+            }
+            @media screen and (max-width:992px) {
+              @include typography(32, 32, 700, #262626, $font-family);
+            }
+            @media screen and (max-width:768px) {
+              @include typography(28, 28, 700, #262626, $font-family);
+            }
+            @media screen and (max-width:580px) {
+              @include typography(22, 22, 700, #262626, $font-family);
+            }
             &::after {
-              width: 100%;
+              content: "";
+              width: 40px;
+              height: 2px;
+              background: #262626;
+              border-radius: 30px;
+              position: absolute;
+              bottom: -16px;
+              left: 0;
+              display: block;
+              transition: width 0.5s ease-in-out;
+            }
+            &:hover {
+              &::after {
+                width: 100%;
+              }
             }
           }
         }
