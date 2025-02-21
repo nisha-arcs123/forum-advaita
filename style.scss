@@ -73,17 +73,14 @@
           &.active span:nth-child(1) {
             transform: translateY(6px) rotate(45deg);
           }
-        
 
           &.active span:nth-child(2) {
             opacity: 0;
           }
-        
 
           &.active span:nth-child(3) {
             transform: translateY(-12px) rotate(-45deg);
           }
-          
         }
       }
       .navbar {
@@ -91,7 +88,7 @@
         @include max-width(1440) {
           gap: 15px;
         }
-        margin:0;
+        margin: 0;
         @include max-width(998) {
           display: none;
         }
@@ -100,10 +97,10 @@
           content: none !important;
         }
         .nav-items {
-          a{
+          a {
             @include nav-items(14, 17, 500, #b5b5b5, $font-family);
             text-decoration: none;
-            &:hover{
+            &:hover {
               color: #262626;
             }
             &.active {
@@ -113,9 +110,6 @@
           @include max-width(1200) {
             font-size: 14px;
           }
-          
-          
-         
         }
       }
     }
@@ -128,76 +122,76 @@
         top: -150%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(#F0F0F0,#FFFFFF);
+        background: linear-gradient(#f0f0f0, #ffffff);
         transition: top 0.3s ease-in;
         backdrop-filter: blur(150px);
         opacity: 1;
-        @include flex-box(na,start,start,na,na);
+        @include flex-box(na, start, start, na, na);
         ul {
           list-style: none;
           padding: 0;
-          text-align:start;
+          text-align: start;
           margin: 0;
           width: 100%;
           margin: 40px;
-          @include flex-box(column,start,start,na,na);
+          @include flex-box(column, start, start, na, na);
           li {
             padding: 24px 0;
-            border-bottom: 2px solid #FFFFFF;
+            border-bottom: 2px solid #ffffff;
             width: 100%;
-            animation: whiteTextRight .6s cubic-bezier(0.4, 0, 1, 1);
-            @include flex-box(na,space-between,center,na,na);
+            animation: whiteTextRight 0.6s cubic-bezier(0.4, 0, 1, 1);
+            @include flex-box(na, space-between, center, na, na);
             a {
               text-decoration: none;
-              @include typography(16, 19, 600, #AEAEAE, $font-family);
+              @include typography(16, 19, 600, #aeaeae, $font-family);
               @media screen and (max-width: 992px) {
-                @include typography(14, 19, 600, #AEAEAE, $font-family);
+                @include typography(14, 19, 600, #aeaeae, $font-family);
               }
               @media screen and (max-width: 580px) {
-                @include typography(12, 14, 600, #AEAEAE, $font-family);
+                @include typography(12, 14, 600, #aeaeae, $font-family);
               }
-              &.first{
+              &.first {
                 color: #262626;
               }
             }
 
-            .arrow-link{
-              border: 1px solid #D9D9D9;
-              @include dimensions(30,30);
+            .arrow-link {
+              border: 1px solid #d9d9d9;
+              @include dimensions(30, 30);
               border-radius: 30px;
-              @include flex-box(na,center,center,na,na);
+              @include flex-box(na, center, center, na, na);
               @media screen and (max-width: 580px) {
-                @include dimensions(20,20);
-                img{
-                  @include dimensions(15,15);
+                @include dimensions(20, 20);
+                img {
+                  @include dimensions(15, 15);
                 }
               }
             }
 
-            .arrow-link-nav{
-              .arrow-link-nav{
-                animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
+            .arrow-link-nav {
+              .arrow-link-nav {
+                animation: whiteTextLeft 0.5s ease, whiteTextRight 0.5s ease;
                 cursor: pointer;
-                a{
+                a {
                   text-decoration: none;
                   display: inline-block;
                   position: relative;
                   margin-bottom: 15px;
                   @include typography(48, 48, 700, #262626, $font-family);
-        
-                  @media screen and (max-width:1440px) {
+
+                  @media screen and (max-width: 1440px) {
                     @include typography(42, 42, 700, #262626, $font-family);
                   }
-                  @media screen and (max-width:1200px) {
+                  @media screen and (max-width: 1200px) {
                     @include typography(38, 38, 700, #262626, $font-family);
                   }
-                  @media screen and (max-width:992px) {
+                  @media screen and (max-width: 992px) {
                     @include typography(32, 32, 700, #262626, $font-family);
                   }
-                  @media screen and (max-width:768px) {
+                  @media screen and (max-width: 768px) {
                     @include typography(28, 28, 700, #262626, $font-family);
                   }
-                  @media screen and (max-width:580px) {
+                  @media screen and (max-width: 580px) {
                     @include typography(22, 22, 700, #262626, $font-family);
                   }
                   &::after {
@@ -233,10 +227,10 @@
           top: 80px;
           @media screen and (max-width: 580px) {
             top: 71px;
-            ul{
+            ul {
               padding: 0px;
               margin: 20px;
-              li{
+              li {
                 padding: 12px 0;
                 &:first-child {
                   padding-top: 0;
@@ -245,15 +239,14 @@
             }
           }
           @media screen and (max-width: 375px) {
-            top:60px;
-            ul{
+            top: 60px;
+            ul {
               padding: 0px;
               margin: 20px;
             }
           }
         }
       }
-     
     }
   }
 
@@ -821,7 +814,7 @@
           width: 100%;
         }
       }
-      &.about-sub{
+      &.about-sub {
         width: 75%;
         @media screen and (max-width: 1440px) {
           width: 100%;
@@ -894,7 +887,7 @@
 
   .view-project {
     padding: 0 135px;
-    margin-top: 12px;
+    margin-top: 30px;
     @include flex-box(na, space-between, center, na, na);
     margin-bottom: 40px;
     @media screen and (max-width: 1200px) {
@@ -912,7 +905,7 @@
       @include dimensions(30, 111);
       // border-bottom: 1px solid #262626;
       @include flex-box(na, start, center, na, 8);
-      padding-bottom: 20px;
+      // padding-bottom: 20px;
       .arrw {
         // border: 1px solid #d9d9d9;
         padding: 6px;
@@ -938,7 +931,11 @@
       }
     }
   }
-
+  .back-2{
+    margin-top: 43px !important;
+    margin-bottom: 26px !important;
+    justify-content: start;
+  }
   .grid-gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1028,10 +1025,10 @@
         img {
           transform: scale(1);
         }
-        .blur-div{
-          .view-all-project{
+        .blur-div {
+          .view-all-project {
             background-color: #262626;
-            color: #FFFFFF;
+            color: #ffffff;
           }
         }
       }
@@ -1144,7 +1141,6 @@
               @include typography(12, 14, 400, #ffffff, $font-family);
             }
           }
-          
         }
         button {
           @include typography(16, 19, 400, #ffffff, $font-family);
@@ -1170,8 +1166,8 @@
             @include flex-box(row, center, center, na, na);
             transition: transform 0.3s ease-in;
             padding: 12px;
-            img{
-              @include dimensions(24,24);
+            img {
+              @include dimensions(24, 24);
             }
             .heart2,
             .send2 {
@@ -1340,8 +1336,8 @@
               padding: 12px;
               @include flex-box(row, center, center, na, na);
               transition: transform 0.3s ease-in;
-              img{
-                @include dimensions(24,24);
+              img {
+                @include dimensions(24, 24);
               }
               .heart2,
               .send2 {
@@ -1446,35 +1442,35 @@
           position: absolute;
         }
         .oval1 {
-          background-color: #E2E2E2;
+          background-color: #e2e2e2;
         }
         .oval2 {
-          background-color: #F5E8CE;
+          background-color: #f5e8ce;
         }
         .oval3 {
-          background-color: #FFE8EA;
+          background-color: #ffe8ea;
         }
         .oval4 {
-          background-color: #EDC6DC;
+          background-color: #edc6dc;
         }
       }
       .team1 {
-        background-color: #EFEFEF;
+        background-color: #efefef;
       }
       .team2 {
-        background-color: #F8F0E1;
+        background-color: #f8f0e1;
       }
       .team3 {
-        background-color: #FFF4F5;
+        background-color: #fff4f5;
       }
       .team4 {
-        background-color: #EEDAE5;
+        background-color: #eedae5;
       }
       .name {
         @include typography(23, 29, 600, #262626, $font-family);
         margin: 0;
         margin-top: 15px;
-        text-transform: capitalize
+        text-transform: capitalize;
       }
       .designation {
         @include typography(13, 23, 300, #444444, na);
@@ -1836,26 +1832,25 @@
 
     .awards-card {
       padding: 12px;
-      box-shadow: 0 2px 15px 0 #0000001A;
+      box-shadow: 0 2px 15px 0 #0000001a;
       .award-img {
         background: linear-gradient(#ffb800, #ffc53d);
         // @include dimensions(285,407);
         @include flex-box(na, center, center, na, na);
         overflow: hidden;
-        img{
+        img {
           width: 100%;
-          transition: transform .5s ease-in-out;
+          transition: transform 0.5s ease-in-out;
         }
-      
       }
-      .small-gall{
-        @include dimensions(262,na);
-        img{
-          @include dimensions(83,83);
+      .small-gall {
+        @include dimensions(262, na);
+        img {
+          @include dimensions(83, 83);
         }
       }
       &:not(:hover) {
-        box-shadow: 0 2px 15px 0 #0000001A;
+        box-shadow: 0 2px 15px 0 #0000001a;
         .award-img {
           img {
             transform: scale(1.2); /* Zoom In */
@@ -1898,7 +1893,6 @@
 
     @media screen and (max-width: 580px) {
       padding: 0 20px;
-      grid-template-columns: 1fr;
       gap: 10px;
       margin-bottom: 60px;
       margin-top: 20px;
@@ -1997,12 +1991,11 @@
               }
             }
           }
-        
         }
       }
 
-      .blog-content{
-        .build-h3{
+      .blog-content {
+        .build-h3 {
           text-transform: capitalize;
         }
       }
@@ -2024,6 +2017,67 @@
       }
     }
   }
+
+
+
+  .art-outer-container {
+    margin-top: 40px;
+    margin-bottom: 120px;
+    padding: 0px 135px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    @media screen and (max-width: 1440px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 1200px) {
+      padding: 0 70px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 40px;
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media screen and (max-width: 580px) {
+      padding: 0 20px;
+      gap: 10px;
+      margin-bottom: 60px;
+      margin-top: 20px;
+    }
+
+    .art-card {
+      padding: 12px;
+      box-shadow: 0 2px 15px 0 #0000001A;
+      // @include dimensions(420,439);
+      overflow: hidden;
+
+     
+      .art-img {
+        // @include dimensions(285,407);
+        @include flex-box(na, center, center, na, na);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        img {
+          width: 100%;
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+
+      .art-content {
+        .build-h3 {
+          text-transform: capitalize;
+        }
+      }
+      
+    }
+  }
   .about-slider-top {
     position: fixed;
     top: 71px;
@@ -2043,46 +2097,46 @@
       // top: 80px;
       // margin-bottom: 80px;
       background-color: #f2f2f291;
-      animation: overleyTopSmall .5s ease;
+      animation: overleyTopSmall 0.5s ease;
       backdrop-filter: blur(20px);
       @media screen and (max-width: 1200px) {
         padding: 40px 70px;
       }
       @media screen and (max-width: 992px) {
-        padding:  40px;
+        padding: 40px;
       }
-  
+
       @media screen and (max-width: 580px) {
         padding: 20px;
       }
       .white-box-header {
         @include typography(20, 20, 600, #262626, $font-family);
-        animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
+        animation: whiteTextLeft 0.5s ease, whiteTextRight 0.5s ease;
       }
-      .white-box-container{
-        @include flex-box(column,start,start,na,30);
+      .white-box-container {
+        @include flex-box(column, start, start, na, 30);
         .white-box-content1 {
-          animation: whiteTextLeft .5s ease, whiteTextRight .5s ease;
+          animation: whiteTextLeft 0.5s ease, whiteTextRight 0.5s ease;
           cursor: pointer;
           p {
             display: inline-block;
             position: relative;
             margin-bottom: 15px;
             @include typography(48, 48, 700, #262626, $font-family);
-  
-            @media screen and (max-width:1440px) {
+
+            @media screen and (max-width: 1440px) {
               @include typography(42, 42, 700, #262626, $font-family);
             }
-            @media screen and (max-width:1200px) {
+            @media screen and (max-width: 1200px) {
               @include typography(38, 38, 700, #262626, $font-family);
             }
-            @media screen and (max-width:992px) {
+            @media screen and (max-width: 992px) {
               @include typography(32, 32, 700, #262626, $font-family);
             }
-            @media screen and (max-width:768px) {
+            @media screen and (max-width: 768px) {
               @include typography(28, 28, 700, #262626, $font-family);
             }
-            @media screen and (max-width:580px) {
+            @media screen and (max-width: 580px) {
               @include typography(22, 22, 700, #262626, $font-family);
             }
             &::after {
@@ -2113,7 +2167,7 @@
       width: 100%;
       height: 80%;
       position: absolute;
-      animation: overleyTop .2s ease;
+      animation: overleyTop 0.2s ease;
     }
   }
   .contact-us-wrapper {
@@ -2197,6 +2251,264 @@
 
         button {
           width: 100%;
+        }
+      }
+    }
+  }
+
+  .pluralism-outer {
+    margin-bottom: 120px;
+    padding: 0px 135px;
+
+    @media screen and (max-width: 1200px) {
+      padding: 0 70px;
+    }
+    @media screen and (max-width: 992px) {
+      padding: 0 40px;
+    }
+    @media screen and (max-width: 580px) {
+      padding: 0 20px;
+      margin-bottom: 60px;
+    }
+
+    .profile-info {
+      @include flex-box(na, start, center, na, na);
+      .profile-div {
+        @include dimensions(48, 48);
+        background-color: #a0a09f;
+        @include flex-box(na, center, center, na, na);
+        border-radius: 30px;
+        margin-right: 16px;
+        @media screen and (max-width: 1440px) {
+          @include dimensions(38, 38);
+          margin-right: 8px;
+        }
+        @media screen and (max-width: 580px) {
+          @include dimensions(28, 28);
+          img {
+            width: 20px;
+          }
+        }
+      }
+      .info-profile {
+        h3 {
+          @include typography(16, 24, 600, #262626, $font-family);
+          @media screen and (max-width: 1440px) {
+            @include typography(14, 18, 600, #262626, $font-family);
+          }
+          @media screen and (max-width: 992px) {
+            @include typography(12, 14, 600, #262626, $font-family);
+          }
+        }
+        span {
+          @include typography(14, 24, 400, #767676, $font-family);
+          margin-right: 10px;
+          @media screen and (max-width: 1200px) {
+            @include typography(12, 24, 400, #767676, $font-family);
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    .pluralism-content {
+      .heading-pluralism {
+        margin-bottom: 46px;
+        @media screen and (max-width:1440px) {
+          margin-bottom: 36px;
+        }
+        @media screen and (max-width:1200px) {
+          margin-bottom: 26px;
+        }
+        @media screen and (max-width:768px) {
+          margin-bottom: 16px;
+        }
+        .pluralism-h2 {
+          margin-top: 26px;
+          margin-bottom: 12px;
+          @include typography(28, 24, 700, #262626, $font-family);
+        }
+        .pluralism-text {
+          @include typography(16, 19, 400, #444444, $font-family);
+          @media screen and (max-width:1200px) {
+            @include typography(14, 16, 400, #444444, $font-family);
+          }
+          @media screen and (max-width:768px) {
+            @include typography(12, 14, 400, #444444, $font-family);
+          }
+          span {
+            font-weight: 500;
+          }
+        }
+        .second-pluralism {
+          @include typography(24, 29, 700, #262626, $font-family);
+          margin: 0;
+          margin-bottom: 12px;
+          @media screen and (max-width:1440px) {
+            @include typography(22, 22, 600, #444444, $font-family);
+          }
+        }
+        .build-p {
+          margin: 0;
+        }
+      }
+      .content-pluralism {
+        @include flex-box(column, start, center, na, 50);
+        margin-bottom: 40px;
+        @media screen and (max-width:1440px) {
+          gap: 30px;
+        }
+        @media screen and (max-width:1200px) {
+          gap: 20px;
+        }
+        .build-p {
+          margin: 0;
+        }
+      }
+
+      .view-comment {
+        padding: 12px 0;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+        @include flex-box(na, space-between, center, na, na);
+        .left-view {
+          @include flex-box(na, start, center, na, 36);
+          p {
+            margin: 0;
+          }
+        }
+        .right-view {
+          @include flex-box(na, space-between, center, na, 24);
+        }
+      }
+
+      .comment-section {
+        margin-top: 40px;
+        @include flex-box(column, start, start, na, na);
+        h6 {
+          @include typography(16, 19, 600, #262626, $font-family);
+          margin: 0;
+          margin-bottom: 16px;
+        }
+        textarea {
+          width: 100%;
+          height: 120px;
+          padding: 16px;
+          font-size: 16px;
+
+          outline: none; /* Remove default focus outline */
+          background-color: #f1f1f1;
+          transition: all 0.3s ease-in-out;
+          border: none;
+          &::placeholder {
+            @include typography(16, 24, 400, #444444, $font-family);
+          }
+        }
+
+
+        .submit{
+          margin-top: 16px;
+          background-color: #262626;
+          @include typography(14, 17, 500, #FFFFFF, $font-family);
+          padding: 12px 20px;
+        }
+
+        .comment-by{
+          @include flex-box(na, start, start, na, 16);
+          margin-top: 36px;
+          .profile-logo{
+            // @include dimensions(36,36);
+            @include flex-box(na, center, center, na,na);
+            background-color: #008000;
+            border-radius: 50px;
+            padding: 12px;
+            p{
+              @include typography(16,20,600,#ffffff,$font-family);
+              margin: 0;
+            }
+          }
+          .info-pro{
+            @include flex-box(column, start, start, na, na);
+            p{
+              margin: 0;
+            }
+            span{
+              @include typography(14,30,400,#707070,$font-family);
+            }
+          }
+        }
+      }
+
+      .recent-post{
+        margin-top: 40px;
+        h2{
+          margin: 0;
+          margin-bottom: 20px;
+          @include typography(24, 24, 600, #444444, $font-family);
+          @media screen and (max-width:1440px) {
+            @include typography(22, 22, 600, #444444, $font-family);
+          }
+         
+        }
+        .recent-post-container{
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+          gap: 21px;
+          @media screen and (max-width: 1440px) {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          // @media screen and (max-width: 1200px) {
+          //   grid-template-columns: 1fr 1fr;
+          // }
+          @media screen and (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+          }
+          .posts{
+            padding: 16px;
+            background-color: #F1F1F1;
+            .post-img{
+              overflow: hidden;
+              img{
+                width: 100%;
+              }
+            }
+            .post-comment{
+              .title{
+                @include typography(16, 19, 600, #262626, $font-family);
+                margin: 0;
+                margin-top: 16px;
+                margin-bottom: 12px;
+              }
+              .on-img-upper {
+                @include flex-box(na, space-between, center, na, na);
+              
+                .upper {
+                  @include flex-box(na, start, center, na, 9);
+      
+                  .first-view,
+                  .comment {
+                    background-color: #ffffff;
+                    padding: 4px 13px;
+                    @include typography(14, 23, 500, #444444, $font-family);
+                    @include flex-box(na, center, center, na, 9);
+                    @media screen and (max-width: 768px) {
+                      @include typography(12, 18, 500, #444444, $font-family);
+                      padding: 2px 5px;
+                    }
+                  }
+                }
+                .heart{
+                  background-color: #ffffff;
+                  padding: 7px;
+                  border-radius: 50px;
+                }
+              }
+              
+            }
+          }
         }
       }
     }
@@ -2286,8 +2598,8 @@
             @include typography(14, 19, 500, #262626, $font-family);
           }
         }
-        img{
-        cursor: pointer;
+        img {
+          cursor: pointer;
         }
       }
     }
@@ -2489,7 +2801,7 @@
           border-bottom: 1px solid #4c4b47;
 
           @include flex-box(row, space-between, center, na, na);
-          input{
+          input {
             @include typography(14, 19, 400, #6f6d66, $font-family);
             // margin-bottom: 8px;
             border: none;
