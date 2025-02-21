@@ -1434,8 +1434,10 @@
         padding-top: 21px;
         overflow: hidden;
         .team-img1 {
-          width: 100%;
+          // width: 100%;
           height: 100%;
+          min-width: 190px;
+          max-width: 300px;
         }
         .oval {
           width: 282px;
@@ -1444,34 +1446,35 @@
           position: absolute;
         }
         .oval1 {
-          background-color: #e2e2e2;
+          background-color: #E2E2E2;
         }
         .oval2 {
-          background-color: #ded7c7;
+          background-color: #F5E8CE;
         }
         .oval3 {
-          background-color: #ffffff;
+          background-color: #FFE8EA;
         }
         .oval4 {
-          background-color: #c8d9ea;
+          background-color: #EDC6DC;
         }
       }
       .team1 {
-        background-color: #efefef;
+        background-color: #EFEFEF;
       }
       .team2 {
-        background-color: #cbc5b7;
+        background-color: #F8F0E1;
       }
       .team3 {
-        background-color: #f1f1f1;
+        background-color: #FFF4F5;
       }
       .team4 {
-        background-color: #b8cee3;
+        background-color: #EEDAE5;
       }
       .name {
         @include typography(23, 29, 600, #262626, $font-family);
         margin: 0;
         margin-top: 15px;
+        text-transform: capitalize
       }
       .designation {
         @include typography(13, 23, 300, #444444, na);
