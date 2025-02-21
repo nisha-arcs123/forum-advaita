@@ -3726,40 +3726,72 @@
   margin-bottom: 120px;
   padding: 0px 135px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 35px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 23px;
+}
+@media screen and (max-width: 1440px) {
+  .outer-wrapper .awards-outer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media screen and (max-width: 1200px) {
   .outer-wrapper .awards-outer-container {
     padding: 0 70px;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
   }
 }
 @media screen and (max-width: 992px) {
   .outer-wrapper .awards-outer-container {
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 40px;
-    gap: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .outer-wrapper .awards-outer-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media screen and (max-width: 580px) {
   .outer-wrapper .awards-outer-container {
     padding: 0 20px;
     margin-bottom: 60px;
-    grid-template-columns: 1fr;
-    gap: 10px;
     margin-top: 20px;
   }
 }
 .outer-wrapper .awards-outer-container .awards-card {
-  padding: 16px;
-  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1490196078);
+  padding: 12px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1019607843);
 }
 .outer-wrapper .awards-outer-container .awards-card .award-img {
   background: linear-gradient(#ffb800, #ffc53d);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+.outer-wrapper .awards-outer-container .awards-card .award-img img {
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.outer-wrapper .awards-outer-container .awards-card .small-gall {
+  height: 262px;
+}
+.outer-wrapper .awards-outer-container .awards-card .small-gall img {
+  width: 83px;
+  height: 83px;
+}
+.outer-wrapper .awards-outer-container .awards-card:not(:hover) {
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1019607843);
+}
+.outer-wrapper .awards-outer-container .awards-card:not(:hover) .award-img img {
+  transform: scale(1.2); /* Zoom In */
+  filter: grayscale(1);
+}
+.outer-wrapper .awards-outer-container .awards-card:hover {
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1490196078);
+}
+.outer-wrapper .awards-outer-container .awards-card:hover .award-img img {
+  transform: scale(1);
 }
 .outer-wrapper .blog-outer-container {
   margin-top: 40px;
