@@ -1879,16 +1879,21 @@
     margin-bottom: 120px;
     padding: 0px 135px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 35px;
-
+    grid-template-columns: repeat(4, 1fr);
+    gap: 23px;
+    @media screen and (max-width: 1440px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
     @media screen and (max-width: 1200px) {
       padding: 0 70px;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
     }
     @media screen and (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
       padding: 0 40px;
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
     }
 
     @media screen and (max-width: 580px) {
@@ -1992,57 +1997,15 @@
               }
             }
           }
-          .heart {
-            background-color: #ffffff4d;
-            border: 1px solid #ffffff;
-            border-radius: 50%;
-            @include dimensions(36, 36);
-            @include flex-box(row, center, center, na, na);
-            transition: transform 0.3s ease-in;
-
-            @media screen and (max-width: 768px) {
-              @include dimensions(26, 26);
-            }
-            .heart2 {
-              display: none;
-              transform: translateX(-200px);
-              transition: transform 0.5s ease-in, display 0.5s ease-in;
-            }
-
-            img {
-              @include dimensions(18, 18);
-              @media screen and (max-width: 768px) {
-                @include dimensions(13, 13);
-              }
-            }
-            // p {
-            //   display: none;
-            //   position: absolute;
-            //   transform: translateY(-40px);
-            //   transition: transform 0.5s ease-in-out, display 0.5s ease-in;
-            //   @include typography(12, 14, 600, #ffffff, $font-family);
-            // }
-
-            &:hover {
-              .heart1 {
-                display: none;
-              }
-              .heart2 {
-                display: block;
-                transform: translateX(0px);
-              }
-              // p {
-              //   display: block;
-              //   transform: translateY(40px);
-              // }
-            }
-          }
-          .heart {
-            transition: transform 0.4s ease-in;
-          }
+        
         }
       }
 
+      .blog-content{
+        .build-h3{
+          text-transform: capitalize;
+        }
+      }
       &:not(:hover) {
         .blog-img {
           img {

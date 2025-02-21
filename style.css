@@ -3798,19 +3798,29 @@
   margin-bottom: 120px;
   padding: 0px 135px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 35px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 23px;
+}
+@media screen and (max-width: 1440px) {
+  .outer-wrapper .blog-outer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media screen and (max-width: 1200px) {
   .outer-wrapper .blog-outer-container {
     padding: 0 70px;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
   }
 }
 @media screen and (max-width: 992px) {
   .outer-wrapper .blog-outer-container {
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .outer-wrapper .blog-outer-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media screen and (max-width: 580px) {
@@ -3979,48 +3989,8 @@
     padding: 2px 5px;
   }
 }
-.outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart {
-  background-color: rgba(255, 255, 255, 0.3019607843);
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in;
-}
-@media screen and (max-width: 768px) {
-  .outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart {
-    width: 26px;
-    height: 26px;
-  }
-}
-.outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart .heart2 {
-  display: none;
-  transform: translateX(-200px);
-  transition: transform 0.5s ease-in, display 0.5s ease-in;
-}
-.outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart img {
-  width: 18px;
-  height: 18px;
-}
-@media screen and (max-width: 768px) {
-  .outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart img {
-    width: 13px;
-    height: 13px;
-  }
-}
-.outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart:hover .heart1 {
-  display: none;
-}
-.outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart:hover .heart2 {
-  display: block;
-  transform: translateX(0px);
-}
-.outer-wrapper .blog-outer-container .blog-card .blog-img .on-img-upper .heart {
-  transition: transform 0.4s ease-in;
+.outer-wrapper .blog-outer-container .blog-card .blog-content .build-h3 {
+  text-transform: capitalize;
 }
 .outer-wrapper .blog-outer-container .blog-card:not(:hover) .blog-img img {
   transform: scale(1.2); /* Zoom In */
