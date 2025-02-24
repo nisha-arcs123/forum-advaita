@@ -736,37 +736,53 @@
 }
 
 .largest-banner-text {
-  font-size: 65px;
-  line-height: 79px;
+  font-size: 55px;
+  line-height: 64px;
   font-weight: 700;
   color: #262626;
   font-family: "Instrument Sans", serif;
 }
 @media screen and (max-width: 1440px) {
   .largest-banner-text {
-    font-size: 50px;
-    line-height: 61px;
+    font-size: 45px;
+    line-height: 50px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
-    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .largest-banner-text {
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 700;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
+@media screen and (max-width: 992px) {
+  .largest-banner-text {
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
   }
 }
 @media screen and (max-width: 580px) {
   .largest-banner-text {
-    font-size: 42px;
-    line-height: 55px;
+    font-size: 30px;
+    line-height: 35px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
-    margin-bottom: 10px;
     text-align: center;
   }
 }
 @media screen and (max-width: 375px) {
   .largest-banner-text {
-    font-size: 38px;
-    line-height: 46px;
+    font-size: 25px;
+    line-height: 30px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
@@ -779,6 +795,7 @@
   font-weight: 400;
   color: #444444;
   font-family: "Instrument Sans", serif;
+  width: 71%;
 }
 @media screen and (max-width: 1440px) {
   .normal-banner-text {
@@ -788,7 +805,7 @@
     color: #444444;
     font-family: "Instrument Sans", serif;
     margin-bottom: 15px;
-    width: 85%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 580px) {
@@ -960,6 +977,15 @@
   color: #262626;
   font-family: "Instrument Sans", serif;
 }
+@media screen and (max-width: 1720px) {
+  .build-h3 {
+    font-size: 23px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
 @media screen and (max-width: 1440px) {
   .build-h3 {
     font-size: 22px;
@@ -994,6 +1020,15 @@
   font-weight: 400;
   color: #444444;
   font-family: "Instrument Sans", serif;
+}
+@media screen and (max-width: 1720px) {
+  .build-p {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #444444;
+    font-family: "Instrument Sans", serif;
+  }
 }
 @media screen and (max-width: 1440px) {
   .build-p {
@@ -1452,6 +1487,8 @@
   padding-left: 135px;
   top: 80px;
   margin-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
 }
 @media screen and (max-width: 1440px) {
   .outer-wrapper .banner-wrapper {
@@ -1464,7 +1501,7 @@
   .outer-wrapper .banner-wrapper {
     padding: 70px;
     padding-top: 0;
-    height: 480px;
+    height: 560px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -1483,7 +1520,7 @@
 }
 @media screen and (max-width: 580px) and (min-width: 480px) {
   .outer-wrapper .banner-wrapper {
-    height: 815px;
+    height: 741px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -1506,6 +1543,11 @@
     padding-top: 119px;
   }
 }
+@media screen and (max-width: 1200px) {
+  .outer-wrapper .banner-wrapper .banner-text {
+    padding-top: 60px;
+  }
+}
 @media screen and (max-width: 580px) {
   .outer-wrapper .banner-wrapper .banner-text {
     width: 95%;
@@ -1514,7 +1556,6 @@
     justify-content: center;
     align-items: center;
     padding-top: 60px;
-    margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1524,6 +1565,9 @@
 }
 .outer-wrapper .banner-wrapper .banner-text .small-faded-banner-text {
   font-family: "Outfit", serif;
+}
+.outer-wrapper .banner-wrapper .banner-text .largest-banner-text span {
+  font-weight: 400;
 }
 .outer-wrapper .banner-wrapper .banner-text .normal-banner-text {
   font-family: "Outfit", serif;
@@ -1578,36 +1622,24 @@
 .outer-wrapper .banner-wrapper .banner-text .primary-button {
   justify-content: center;
 }
-.outer-wrapper .banner-wrapper .image-wrapper img {
-  width: 100%;
+.outer-wrapper .banner-wrapper .image-wrapper {
+  width: 56%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
 }
-@media screen and (max-width: 1440px) {
-  .outer-wrapper .banner-wrapper .image-wrapper .pc {
-    display: none;
-  }
-}
-.outer-wrapper .banner-wrapper .image-wrapper .laptop {
-  display: none;
-}
-@media screen and (max-width: 1440px) {
-  .outer-wrapper .banner-wrapper .image-wrapper .laptop {
-    display: block;
-  }
+.outer-wrapper .banner-wrapper .image-wrapper img {
+  width: 100%;
 }
 @media screen and (max-width: 580px) {
-  .outer-wrapper .banner-wrapper .image-wrapper .laptop {
-    display: none;
-  }
-}
-.outer-wrapper .banner-wrapper .image-wrapper .mobile {
-  display: none;
-}
-@media screen and (max-width: 580px) {
-  .outer-wrapper .banner-wrapper .image-wrapper .mobile {
-    display: block;
+  .outer-wrapper .banner-wrapper .image-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
   }
 }
 .outer-wrapper .img-text-container {
@@ -2025,6 +2057,7 @@
   position: relative;
   cursor: pointer;
   display: inline-block;
+  width: 100%;
 }
 @media screen and (max-width: 580px) {
   .outer-wrapper .img-text-container .inner-container .img-container .library {
@@ -3946,6 +3979,7 @@
   position: relative;
   cursor: pointer;
   display: inline-block;
+  width: 100%;
 }
 .outer-wrapper .blog-outer-container .blog-card .blog-img img {
   width: 100%;
@@ -4064,6 +4098,7 @@
 }
 .outer-wrapper .art-outer-container .art-card .art-content .build-h3 {
   text-transform: capitalize;
+  text-decoration: none;
 }
 .outer-wrapper .about-slider-top {
   position: fixed;
@@ -4111,6 +4146,17 @@
   color: #262626;
   font-family: "Instrument Sans", serif;
   animation: whiteTextLeft 0.5s ease, whiteTextRight 0.5s ease;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 992px) {
+  .outer-wrapper .about-slider-top .white-box .white-box-header {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-wrapper .about-slider-top .white-box .white-box-header {
+    margin-bottom: 20px;
+  }
 }
 .outer-wrapper .about-slider-top .white-box .white-box-container {
   display: flex;
@@ -4118,6 +4164,21 @@
   justify-content: start;
   align-items: start;
   gap: 30px;
+}
+@media screen and (max-width: 1440px) {
+  .outer-wrapper .about-slider-top .white-box .white-box-container {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .outer-wrapper .about-slider-top .white-box .white-box-container {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-wrapper .about-slider-top .white-box .white-box-container {
+    gap: 10px;
+  }
 }
 .outer-wrapper .about-slider-top .white-box .white-box-container .white-box-content1 {
   animation: whiteTextLeft 0.5s ease, whiteTextRight 0.5s ease;

@@ -256,6 +256,8 @@
     padding-left: 135px;
     top: 80px;
     margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
     @media screen and (max-width: 1440px) {
       align-items: start;
       height: 613px;
@@ -265,7 +267,7 @@
     @media screen and (max-width: 1200px) {
       padding: 70px;
       padding-top: 0;
-      height: 480px;
+      height: 560px;
     }
     @media screen and (max-width: 992px) {
       padding: 0 40px;
@@ -278,7 +280,7 @@
       margin-bottom: 71px;
     }
     @media screen and (max-width: 580px) and (min-width: 480px) {
-      height: 815px;
+      height: 741px;
     }
     @media screen and (max-width: 375px) {
       top: 60px;
@@ -292,17 +294,24 @@
         width: 488px;
         padding-top: 119px;
       }
+      @media screen and (max-width: 1200px) {
+        padding-top: 60px;
+      }
       @media screen and (max-width: 580px) {
         width: 95%;
         @include flex-box(column, center, center, na, na);
         padding-top: 60px;
-        margin: auto;
       }
       @media screen and (max-width: 480px) {
         width: 100%;
       }
       .small-faded-banner-text {
         font-family: "Outfit", serif;
+      }
+      .largest-banner-text{
+        span{
+          font-weight: 400;
+        }
       }
       .normal-banner-text {
         font-family: "Outfit", serif;
@@ -335,32 +344,24 @@
       }
     }
     .image-wrapper {
+      width: 56%;
+      height: 100%;
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  
       img {
         width: 100%;
-        position: absolute;
-        left: 0;
-        bottom: 0;
       }
-      .pc {
-        @media screen and (max-width: 1440px) {
-          display: none;
-        }
+      @media screen and (max-width: 580px) {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
       }
-      .laptop {
-        display: none;
-        @media screen and (max-width: 1440px) {
-          display: block;
-        }
-        @media screen and (max-width: 580px) {
-          display: none;
-        }
-      }
-      .mobile {
-        display: none;
-        @media screen and (max-width: 580px) {
-          display: block;
-        }
-      }
+     
     }
   }
 
@@ -604,6 +605,7 @@
           position: relative;
           cursor: pointer;
           display: inline-block;
+          width: 100%;
           @media screen and (max-width: 580px) {
             width: auto;
           }
@@ -1965,6 +1967,7 @@
         position: relative;
         cursor: pointer;
         display: inline-block;
+        width: 100%;
         img {
           width: 100%;
           transition: transform 0.5s ease-in-out;
@@ -2054,7 +2057,6 @@
       box-shadow: 0 2px 15px 0 #0000001A;
       // @include dimensions(420,439);
       overflow: hidden;
-
      
       .art-img {
         // @include dimensions(285,407);
@@ -2073,6 +2075,7 @@
       .art-content {
         .build-h3 {
           text-transform: capitalize;
+          text-decoration: none;
         }
       }
       
@@ -2112,9 +2115,27 @@
       .white-box-header {
         @include typography(20, 20, 600, #262626, $font-family);
         animation: whiteTextLeft 0.5s ease, whiteTextRight 0.5s ease;
+        margin-bottom: 40px;
+        @media screen and (max-width: 992px) {
+          margin-bottom: 30px;
+        }
+  
+        @media screen and (max-width: 580px) {
+          margin-bottom: 20px;
+        }
       }
       .white-box-container {
         @include flex-box(column, start, start, na, 30);
+        @media screen and (max-width: 1440px) {
+          gap: 20px;
+        }
+        @media screen and (max-width: 992px) {
+          gap: 15px;
+        }
+  
+        @media screen and (max-width: 580px) {
+          gap: 10px;
+        }
         .white-box-content1 {
           animation: whiteTextLeft 0.5s ease, whiteTextRight 0.5s ease;
           cursor: pointer;
