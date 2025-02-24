@@ -498,23 +498,24 @@ $overflow-property-shortcuts: a, h ,s, v;
 
   .largest-banner-text{
     @include typography(55, 64, 700, $primary-color ,$font-family);
+    @media screen and (max-width:1720px) {
+      @include typography(42, 54, 700, $primary-color ,$font-family);
+    }
     @media screen and (max-width:1440px) {
-      @include typography(45, 50, 700, $primary-color ,$font-family);
+      @include typography(38, 48, 700, $primary-color ,$font-family);
     }
     @media screen and (max-width:1200px) {
-      @include typography(40, 45, 700, $primary-color ,$font-family);
+      // @include typography(40, 45, 700, $primary-color ,$font-family);
+      @include typography(33, 40, 700, $primary-color ,$font-family);
     }
     @media screen and (max-width:992px) {
-      @include typography(35, 40, 700, $primary-color ,$font-family);
-     
+      @include typography(28, 32, 700, $primary-color ,$font-family);
     }
     @media screen and (max-width:580px) {
-      @include typography(30, 35, 700, $primary-color ,$font-family);
-      text-align: center;
-    }
-    @media screen and (max-width:375px) {
+     
       @include typography(25, 30, 700, $primary-color ,$font-family);
     }
+   
   }
 
   .normal-banner-text{
@@ -525,11 +526,13 @@ $overflow-property-shortcuts: a, h ,s, v;
       margin-bottom: 15px;
       width: 70%;
     }
+    @media screen and (max-width:992px) {
+      text-align: center;
+    }
     @media screen and (max-width:580px) {
       @include typography(12, 14, 400, #444444 ,$font-family);
       margin-bottom: 20px;
       width: 100%;
-      text-align: center;
     }
   }
 
@@ -552,7 +555,7 @@ $overflow-property-shortcuts: a, h ,s, v;
       @include typography(44, 48, 700, $primary-color ,$font-family);
     }
     @media screen and (max-width:1440px) {
-      @include typography(38, 46, 700, $primary-color ,$font-family);
+      @include typography(33, 42, 700, $primary-color ,$font-family);
     }
     @media screen and (max-width:1200px) {
       @include typography(30, 38, 700, $primary-color ,$font-family);
@@ -563,8 +566,8 @@ $overflow-property-shortcuts: a, h ,s, v;
     @media screen and (max-width:580px) {
       @include typography(24, 29, 700, $primary-color ,$font-family);
     }
-    @media screen and (max-width:320px) {
-      @include typography(22, 25, 700, $primary-color ,$font-family);
+    @media screen and (max-width:375px) {
+      @include typography(20, 25, 700, $primary-color ,$font-family);
     }
   }
 

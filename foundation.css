@@ -742,10 +742,19 @@
   color: #262626;
   font-family: "Instrument Sans", serif;
 }
+@media screen and (max-width: 1720px) {
+  .largest-banner-text {
+    font-size: 42px;
+    line-height: 54px;
+    font-weight: 700;
+    color: #262626;
+    font-family: "Instrument Sans", serif;
+  }
+}
 @media screen and (max-width: 1440px) {
   .largest-banner-text {
-    font-size: 45px;
-    line-height: 50px;
+    font-size: 38px;
+    line-height: 48px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
@@ -753,8 +762,8 @@
 }
 @media screen and (max-width: 1200px) {
   .largest-banner-text {
-    font-size: 40px;
-    line-height: 45px;
+    font-size: 33px;
+    line-height: 40px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
@@ -762,24 +771,14 @@
 }
 @media screen and (max-width: 992px) {
   .largest-banner-text {
-    font-size: 35px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 32px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
   }
 }
 @media screen and (max-width: 580px) {
-  .largest-banner-text {
-    font-size: 30px;
-    line-height: 35px;
-    font-weight: 700;
-    color: #262626;
-    font-family: "Instrument Sans", serif;
-    text-align: center;
-  }
-}
-@media screen and (max-width: 375px) {
   .largest-banner-text {
     font-size: 25px;
     line-height: 30px;
@@ -808,6 +807,11 @@
     width: 70%;
   }
 }
+@media screen and (max-width: 992px) {
+  .normal-banner-text {
+    text-align: center;
+  }
+}
 @media screen and (max-width: 580px) {
   .normal-banner-text {
     font-size: 12px;
@@ -817,7 +821,6 @@
     font-family: "Instrument Sans", serif;
     margin-bottom: 20px;
     width: 100%;
-    text-align: center;
   }
 }
 
@@ -864,8 +867,8 @@
 }
 @media screen and (max-width: 1440px) {
   .heading-text {
-    font-size: 38px;
-    line-height: 46px;
+    font-size: 33px;
+    line-height: 42px;
     font-weight: 700;
     color: #262626;
     font-family: "Instrument Sans", serif;
@@ -898,9 +901,9 @@
     font-family: "Instrument Sans", serif;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .heading-text {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 25px;
     font-weight: 700;
     color: #262626;
