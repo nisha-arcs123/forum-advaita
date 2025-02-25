@@ -603,13 +603,23 @@
           position: relative;
           cursor: pointer;
           display: inline-block;
+          height: 657px;
+          @media screen and (max-width: 1720px) {
+            height: 560px;
+          }
+          @media screen and (max-width: 1440px) {
+            height: 450px;
+          }
           @media screen and (max-width: 992px) {
             width: 100%;
+            height: 400px;
           }
           img {
             width: 100%;
-            height: auto;
+            height:100%;
             transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+            object-position: center;
             &:not(:hover) {
               transform: scale(1.2); /* Zoom In */
               filter: grayscale(1);
@@ -625,10 +635,23 @@
           cursor: pointer;
           display: inline-block;
           width: 50%;
+          height: 657px;
+          @media screen and (max-width: 1720px) {
+            height: 560px;
+          }
+          @media screen and (max-width: 1440px) {
+            height: 450px;
+          }
+          @media screen and (max-width: 992px) {
+            width: 100%;
+            height: 400px;
+          }
           img {
             width: 100%;
-            height: auto;
+            height:100%;
             transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+          object-position: center;
             &:not(:hover) {
               transform: scale(1.2); /* Zoom In */
               filter: grayscale(1);
@@ -644,13 +667,24 @@
           cursor: pointer;
           display: inline-block;
           width: 100% !important;
-          @media screen and (max-width: 580px) {
-            width: auto;
+          height: 657px;
+          @media screen and (max-width: 1720px) {
+            height: 560px;
           }
+          @media screen and (max-width: 1440px) {
+            height: 450px;
+          }
+          @media screen and (max-width: 992px) {
+            width: 100%;
+            height: 400px;
+          }
+         
           img {
             width: 100%;
-            height: auto;
+            height:100%;
             transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+          object-position: center;
             &:not(:hover) {
               transform: scale(1.2); /* Zoom In */
               filter: grayscale(1);
@@ -1056,12 +1090,15 @@
       display: inline-block;
       overflow: hidden;
       // height: 100%;
+      height: 500px;
       img {
         display: block;
-        height: 500px;
+        height: 100%;
         width: 100%;
         height: auto;
         transition: transform 0.5s ease-in-out;
+        object-fit: cover;
+        object-position: center;
         @media screen and (max-width: 1440px) {
           height: auto;
         }
@@ -1110,11 +1147,13 @@
         img {
           transform: scale(1.2);
           filter: grayscale(1);
+          height: 500px;
         }
       }
       &:hover {
         img {
           transform: scale(1);
+          height: 500px;
         }
         .blur-div {
           .view-all-project {
@@ -1131,6 +1170,7 @@
     grid-template-columns: repeat(4, 1fr);
     margin-top: 40px;
     gap: 20px;
+    row-gap: 16px;
     margin-bottom: 118px;
     padding: 0 135px;
     @media screen and (max-width: 1440px) {
@@ -1170,14 +1210,15 @@
         position: relative;
         display: inline-block;
         overflow: hidden;
-        height: 100%;
-        @media screen and (max-width: 375px) {
-          width: 100%;
-        }
-        img {
+        height: 657px;
+        width: 100%;
+        
+        .image {
           transition: transform 0.5s ease-in-out;
           width: 100%;
           height: 100%;
+          object-fit: cover;
+          object-position: center;
         }
       }
       .text-div {
@@ -1185,7 +1226,7 @@
         padding: 30px;
         position: absolute;
         top: 0;
-        bottom: 0;
+        bottom: 8px;
         left: 0;
         right: 0;
         background: #00000090;
@@ -1211,14 +1252,20 @@
             width: 40%;
             transform: translateX(-400px);
             transition: transform 0.5s ease-out;
+            @media screen and (max-width: 1720px) {
+              @include typography(40, 42, 600, #ffffff, $font-family);
+            }
+            @media screen and (max-width: 1440px) {
+              @include typography(36, 42, 600, #ffffff, $font-family);
+            }
+            @media screen and (max-width: 1200px) {
+              @include typography(30, 38, 600, #ffffff, $font-family);
+            }
             @media screen and (max-width: 992px) {
-              @include typography(38, 26, 600, #ffffff, $font-family);
+              @include typography(25, 32, 600, #ffffff, $font-family);
             }
             @media screen and (max-width: 580px) {
-              @include typography(28, 21, 600, #ffffff, $font-family);
-            }
-            @media screen and (max-width: 375px) {
-              @include typography(22, 18, 600, #ffffff, $font-family);
+              @include typography(22, 26, 600, #ffffff, $font-family);
             }
           }
           p {
@@ -1484,6 +1531,117 @@
     }
   }
 
+
+.popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 80%;
+  max-width: 1600px;
+  height: 90vh;
+  max-height: 800px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  overflow: hidden;
+  transition: 1s;
+  opacity: 0;
+  &.active{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    .close-btn,
+    .image-name,
+    .index,
+    .large-image,
+    .arrow-btn{
+  opacity: 1;
+  transition: opacity .5s;
+  transition-delay: 1s;
+
+
+  }
+}
+
+.top-bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 300;
+  .image-name{
+    opacity: 0;
+  }
+  
+  .close-btn{
+    opacity: 0;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f00;
+    cursor: pointer;
+  }
+}
+
+.arrow-btn{
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.left-arrow{
+  left: 10px;
+}
+
+.right-arrow{
+  right: 10px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.arrow-btn:hover{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+.index{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 80px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+}
+
+.large-image{
+  margin-top: 5%;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  opacity: 0;
+}
+}
+
+
+
+
   .team-info-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1728,10 +1886,12 @@
         overflow: hidden;
         position: relative;
         height: 100%;
-        img {
+        .master-image {
           width: 100%;
           height: 100%;
           transition: transform 0.5s ease-in-out;
+          object-fit: cover;
+          object-position: center;
         }
         .overlay-master {
           position: absolute;
@@ -1821,10 +1981,12 @@
           position: relative;
           height: 100%;
           width: 100%;
-          img {
+          .master-image{
             width: 100%;
             height: 100%;
             transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+           object-position: center;
           }
           .overlay-master {
             position: absolute;
@@ -2513,6 +2675,15 @@
           margin-top: 26px;
           margin-bottom: 12px;
           @include typography(28, 24, 700, #262626, $font-family);
+          @media screen and (max-width: 1440px) {
+            @include typography(24, 28, 700, #262626, $font-family);
+          }
+          @media screen and (max-width: 1200px) {
+            @include typography(18, 24, 700, #262626, $font-family);
+          }
+          @media screen and (max-width: 768px) {
+            @include typography(14, 18, 700, #262626, $font-family);
+          }
         }
         .pluralism-text {
           @include typography(16, 19, 400, #444444, $font-family);
