@@ -632,7 +632,25 @@ $overflow-property-shortcuts: a, h ,s, v;
   }
 
 
-  
+  .poetry-text{
+    @include typography(24,24,400,#444444,$font-family);
+    @media screen and (max-width: 1720px){
+      @include typography(20,20,400,#444444,$font-family);
+    }
+    @media screen and (max-width: 1440px){
+      @include typography(18,18,400,#444444,$font-family);
+    }
+
+    @media screen and (max-width: 992px){
+      @include typography(16,16,400,#444444,$font-family);
+    }
+    @media screen and (max-width: 768px){
+      @include typography(14,14,400,#444444,$font-family);
+    }
+    @media screen and (max-width: 580px){
+      @include typography(12,12,400,#444444,$font-family);
+    }
+  }
 
  
 /************************** breakpoints **************************/
