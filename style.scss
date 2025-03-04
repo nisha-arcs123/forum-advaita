@@ -616,7 +616,7 @@
           }
           img {
             width: 100%;
-            height:100%;
+            height: 100%;
             transition: transform 0.5s ease-in-out;
             object-fit: cover;
             object-position: center;
@@ -648,10 +648,10 @@
           }
           img {
             width: 100%;
-            height:100%;
+            height: 100%;
             transition: transform 0.5s ease-in-out;
             object-fit: cover;
-          object-position: center;
+            object-position: center;
             &:not(:hover) {
               transform: scale(1.2); /* Zoom In */
               filter: grayscale(1);
@@ -678,13 +678,13 @@
             width: 100%;
             height: 400px;
           }
-         
+
           img {
             width: 100%;
-            height:100%;
+            height: 100%;
             transition: transform 0.5s ease-in-out;
             object-fit: cover;
-          object-position: center;
+            object-position: center;
             &:not(:hover) {
               transform: scale(1.2); /* Zoom In */
               filter: grayscale(1);
@@ -897,16 +897,7 @@
 
       .normal-text {
         margin: 0;
-        @include typography(16, 24, 400, #444444, $font-family);
-        @media screen and (max-width: 992px) {
-          @include typography(14, 18, 400, #444444, $font-family);
-        }
-        @media screen and (max-width: 580px) {
-          @include typography(12, 14, 400, #444444, $font-family);
-        }
-        // @media screen and (max-width: 992px) {
-        //   margin-bottom: 20px;
-        // }
+     
       }
     }
     .view-mobile {
@@ -985,12 +976,8 @@
       @include flex-box(na, start, center, na, 8);
       // padding-bottom: 20px;
       overflow: hidden;
-      .arrw {
-        // border: 1px solid #d9d9d9;
-        padding: 6px;
-        @include flex-box(na, center, center, na, na);
-        border-radius: 30px;
-        @include dimensions(30, 30);
+      img {
+        @include dimensions(12, 14);
       }
       .view {
         text-decoration: none;
@@ -1008,12 +995,12 @@
       }
 
       &:hover {
-        .arrw {
+        img {
           transform: translateX(-100px);
-          transition: all 0.2s linear;
+          transition: all 0.3s ease;
         }
         .view {
-          left: -38px;
+          left: -16px;
           &::after {
             width: 100%;
             height: 2px;
@@ -1089,8 +1076,8 @@
       position: relative;
       display: inline-block;
       overflow: hidden;
-      // height: 100%;
-      height: 500px;
+      height: 100%;
+      // height: 500px;
       img {
         display: block;
         height: 100%;
@@ -1139,7 +1126,8 @@
           padding: 13px 19px;
           background-color: #d9d9d903;
           @media screen and (max-width: 992px) {
-            @include typography(13, 17, 500, #262626, $font-family);
+            @include typography(12, 17, 500, #262626, $font-family);
+            padding: 6px 10px;
           }
         }
       }
@@ -1212,7 +1200,12 @@
         overflow: hidden;
         height: 657px;
         width: 100%;
-        
+        @media screen and (max-width: 1720px) {
+          height: 540px;
+        }
+        @media screen and (max-width: 375px) {
+          height: 340px;
+        }
         .image {
           transition: transform 0.5s ease-in-out;
           width: 100%;
@@ -1220,6 +1213,64 @@
           object-fit: cover;
           object-position: center;
         }
+        @media screen and (max-width: 768px) {
+          .like-share-div {
+            position: absolute;
+            display: flex;
+            gap: 17px;
+            left: 30px;
+            bottom: 25px;
+           
+            .share {
+              background-color: #ffffff4d;
+              border: 1px solid #ffffff;
+              border-radius: 50%;
+              // @include dimensions(36, 36);
+              @include flex-box(row, center, center, na, na);
+              transition: transform 0.3s ease-in;
+              padding: 12px;
+              img {
+                @include dimensions(24, 24);
+              }
+            
+              .send2 {
+                display: none;
+                transform: translateX(-200px);
+                transition: transform 0.5s ease-in, display 0.5s ease-in;
+              }
+              p {
+                display: none;
+                position: absolute;
+                transform: translateY(-40px);
+                transition: transform 0.5s ease-in-out, display 0.5s ease-in;
+                @include typography(12, 14, 600, #ffffff, $font-family);
+              }
+              img {
+                @include dimensions(18, 18);
+              }
+              &:hover {
+               
+                .send1 {
+                  display: none;
+                }
+                
+                .send2 {
+                  display: block;
+                  transform: translateX(0px);
+                }
+                p {
+                  display: block;
+                  transform: translateY(40px);
+                }
+              }
+            }
+            
+            .share {
+              transition: transform 0.5s ease-in;
+            }
+          }
+        }
+       
       }
       .text-div {
         @include flex-box(column, space-between, start, na, na);
@@ -1407,241 +1458,53 @@
           color: #ffffff;
         }
       }
-
-      .carousel-container {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        .carousel {
-          #carousel-image {
-            max-width: 80vw;
-            max-height: 80vh;
-            display: block;
-            margin: auto;
-          }
-
-          .imges {
-            @include flex-box(na, start, center, na, 10);
-            position: absolute;
-            left: 20px;
-            bottom: 20px;
-            p {
-              margin: 0;
-              @include typography(18, 21, 500, #ffffff, $font-family);
-              @media screen and (max-width: 992px) {
-                @include typography(16, 18, 500, #ffffff, $font-family);
-              }
-              @media screen and (max-width: 580px) {
-                @include typography(12, 16, 500, #ffffff, $font-family);
-              }
-            }
-            img {
-              margin-right: 5px;
-            }
-          }
-          .arrow-container {
-            position: absolute;
-            left: 43.5%;
-            bottom: 1px;
-            @include flex-box(na, center, center, na, 30);
-            #prev,
-            #next {
-              cursor: pointer;
-              border-radius: 50%;
-              border: 1px solid #ffffff;
-              background: #ffffff4d;
-              color: white;
-              @include flex-box(na, center, center, na, na);
-              @include dimensions(62, 62);
-              @media screen and (max-width: 992px) {
-                @include dimensions(52, 52);
-              }
-              @media screen and (max-width: 580px) {
-                @include dimensions(42, 42);
-              }
-            }
-          }
-          .like-share-div {
-            position: absolute;
-            display: flex;
-            gap: 17px;
-            right: 18px;
-            bottom: 25px;
-            .heart,
-            .share {
-              background-color: #ffffff4d;
-              border: 1px solid #ffffff;
-              border-radius: 50%;
-              // @include dimensions(36, 36);
-              padding: 12px;
-              @include flex-box(row, center, center, na, na);
-              transition: transform 0.3s ease-in;
-              img {
-                @include dimensions(24, 24);
-              }
-              .heart2,
-              .send2 {
-                display: none;
-                transform: translateX(-200px);
-                transition: transform 0.5s ease-in, display 0.5s ease-in;
-              }
-              p {
-                display: none;
-                position: absolute;
-                transform: translateY(-40px);
-                transition: transform 0.5s ease-in-out, display 0.5s ease-in;
-                @include typography(12, 14, 600, #ffffff, $font-family);
-              }
-              img {
-                @include dimensions(18, 18);
-              }
-              &:hover {
-                .heart1,
-                .send1 {
-                  display: none;
-                }
-                .heart2,
-                .send2 {
-                  display: block;
-                  transform: translateX(0px);
-                }
-                p {
-                  display: block;
-                  transform: translateY(40px);
-                }
-              }
-            }
-            .heart {
-              transition: transform 0.4s ease-in;
-            }
-            .share {
-              transition: transform 0.5s ease-in;
-            }
-          }
-        }
-
-        .multiple-carousel-img {
-          display: flex;
-          gap: 18px;
-          .active {
-            border: 1px solid white;
-          }
-        }
-      }
     }
   }
 
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
 
-.popup{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 80%;
-  max-width: 1600px;
-  height: 90vh;
-  max-height: 800px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-  overflow: hidden;
-  transition: 1s;
-  opacity: 0;
-  &.active{
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    .close-btn,
-    .image-name,
-    .index,
-    .large-image,
-    .arrow-btn{
-  opacity: 1;
-  transition: opacity .5s;
-  transition-delay: 1s;
-
-
+    .modal-content {
+      display: block;
+      margin: 10% auto;
+      max-width: 80%;
+      max-height: 80%;
+    }
+    .close {
+      position: absolute;
+      top: 108px;
+      right: 65px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 27px;
+      color: white;
+      cursor: pointer;
+      // background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+      user-select: none;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
   }
-}
-
-.top-bar{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: #000;
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  font-weight: 300;
-  .image-name{
-    opacity: 0;
-  }
-  
-  .close-btn{
-    opacity: 0;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #f00;
-    cursor: pointer;
-  }
-}
-
-.arrow-btn{
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 10px;
-  border-radius: 50%;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.left-arrow{
-  left: 10px;
-}
-
-.right-arrow{
-  right: 10px;
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.arrow-btn:hover{
-  background: rgba(0, 0, 0, 0.5);
-}
-
-
-.index{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 80px;
-  font-weight: 100;
-  color: rgba(255, 255, 255, 0.4);
-  opacity: 0;
-}
-
-.large-image{
-  margin-top: 5%;
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
-  opacity: 0;
-}
-}
-
-
-
-
   .team-info-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1675,20 +1538,26 @@
       padding: 20px;
       border: 1px solid #f2f2f2;
       background-color: #ffffff;
+      @media screen and (max-width: 580px) {
+        padding: 10PX;
+      }
       .img-of-member {
         @include dimensions(395, na);
         @include flex-box(na, center, center, na, na);
         padding-top: 21px;
         overflow: hidden;
+        @media screen and (max-width: 580px) {
+          @include dimensions(280, na);
+        }
         .team-img1 {
           // width: 100%;
           height: 100%;
-          min-width: 190px;
-          max-width: 300px;
+          // min-width: 190px;
+          // max-width: 300px;
         }
         .oval {
-          width: 282px;
-          height: 347px;
+          width: 86%;
+          height: 84%;
           border-radius: 141px;
           position: absolute;
           background-color: #e2e2e2;
@@ -1730,9 +1599,12 @@
         margin: 0;
         margin-top: 15px;
         text-transform: capitalize;
+        @media screen and (max-width: 992px) {
+          @include typography(18, 22, 600, #262626, $font-family);
+        }
       }
       .designation {
-        @include typography(13, 23, 300, #444444, na);
+        @include typography(13, 16, 300, #444444, na);
         font-family: "Outfit", serif;
         margin: 0;
       }
@@ -1905,7 +1777,7 @@
           padding-bottom: 35px;
           opacity: 0;
           transition: opacity 0.5s ease-in;
-          .heart,
+          
           .share {
             background-color: #ffffff4d;
             border: 1px solid #ffffff;
@@ -1914,7 +1786,7 @@
             @include flex-box(row, center, center, na, na);
             transform: translateX(300px);
             transition: transform 0.3s ease-in;
-            .heart2,
+           
             .send2 {
               display: none;
               transform: translateX(-200px);
@@ -1931,11 +1803,11 @@
               @include dimensions(24, 24);
             }
             &:hover {
-              .heart1,
+         
               .send1 {
                 display: none;
               }
-              .heart2,
+             
               .send2 {
                 display: block;
                 transform: translateX(0px);
@@ -1946,9 +1818,7 @@
               }
             }
           }
-          .heart {
-            transition: transform 0.4s ease-in;
-          }
+        
           .share {
             transition: transform 0.5s ease-in;
           }
@@ -1961,7 +1831,7 @@
         &:hover {
           .overlay-master {
             opacity: 1;
-            .heart,
+          
             .share {
               transform: translateX(0px);
             }
@@ -1981,12 +1851,12 @@
           position: relative;
           height: 100%;
           width: 100%;
-          .master-image{
+          .master-image {
             width: 100%;
             height: 100%;
             transition: transform 0.5s ease-in-out;
             object-fit: cover;
-           object-position: center;
+            object-position: center;
           }
           .overlay-master {
             position: absolute;
@@ -2000,7 +1870,7 @@
             padding-bottom: 35px;
             opacity: 0;
             transition: opacity 0.5s ease-in;
-            .heart,
+            
             .share {
               background-color: #ffffff4d;
               border: 1px solid #ffffff;
@@ -2008,7 +1878,7 @@
               @include dimensions(48, 48);
               @include flex-box(row, center, center, na, na);
               transform: translateX(300px);
-              .heart2,
+             
               .send2 {
                 display: none;
                 transform: translateX(-200px);
@@ -2025,11 +1895,11 @@
                 @include dimensions(24, 24);
               }
               &:hover {
-                .heart1,
+            
                 .send1 {
                   display: none;
                 }
-                .heart2,
+     
                 .send2 {
                   display: block;
                   transform: translateX(0px);
@@ -2040,9 +1910,7 @@
                 }
               }
             }
-            .heart {
-              transition: transform 0.4s ease-in;
-            }
+           
             .share {
               transition: transform 0.5s ease-in;
             }
@@ -2055,7 +1923,7 @@
           &:hover {
             .overlay-master {
               opacity: 1;
-              .heart,
+              
               .share {
                 transform: translateX(0px);
               }
@@ -2166,7 +2034,6 @@
       margin-top: 20px;
     }
 
-    
     .blog-card {
       text-decoration: none;
       padding: 16px;
@@ -2342,6 +2209,7 @@
 
       .art-content {
         .build-h3 {
+          margin-top: 10px;
           text-transform: capitalize;
           text-decoration: none;
         }
@@ -2355,6 +2223,7 @@
         }
       }
       &:hover {
+        box-shadow: 0 10px 40px 0 #00000026;
         .art-img {
           img {
             transform: scale(1); /* Zoom Out */
@@ -2478,12 +2347,12 @@
     background-color: #f9f9f9;
     padding: 40px;
     display: grid;
-    grid-template-columns: 58.5% 38.5%;
+    grid-template-columns: 58.5% 38.7%;
     gap: 40px;
 
     @media screen and (max-width: 1440px) {
-      padding: 30px;
-      gap: 30px;
+      padding: 25px;
+      gap: 20px;
     }
     @media screen and (max-width: 1200px) {
       margin: 30px 70px;
@@ -2491,12 +2360,11 @@
     @media screen and (max-width: 992px) {
       margin: 30px 40px;
       grid-template-columns: 100%;
-      padding: 20px;
-      gap: 20px;
+      gap: 0px;
+      padding: 15px;
     }
     @media screen and (max-width: 580px) {
       margin: 20px;
-      padding: 15px;
     }
     .contact-img {
       height: 100%;
@@ -2510,14 +2378,12 @@
       background-color: #ffffff;
       padding: 40px;
       @media screen and (max-width: 1440px) {
-        padding: 30px;
+        padding: 25px;
       }
       @media screen and (max-width: 992px) {
-        padding: 20px;
-      }
-      @media screen and (max-width: 580px) {
         padding: 15px;
       }
+
       .build-h3 {
         text-transform: uppercase;
       }
@@ -2525,13 +2391,13 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        @media screen and (max-width: 992px) {
-          margin-top: 8px;
+        @media screen and (max-width: 1440px) {
+          margin-top: 10px;
         }
       }
       form {
         @media screen and (max-width: 1440px) {
-          margin-top: 30px;
+          margin-top: 25px;
         }
         .text {
           border: 1px solid #e3e3e3;
@@ -2543,12 +2409,16 @@
             outline: none;
             resize: none;
             padding: 9px 15px;
-            width: 91%;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
             &:focus {
               outline: none;
             }
             &::placeholder {
               @include typography(14, 24, 400, #8a8a8a, $font-family);
+              display: block;
+              line-height: 1 !important;
             }
           }
         }
@@ -2576,7 +2446,7 @@
     }
     .h3-heading {
       margin: 0;
-      margin-bottom: 66px;
+      margin-bottom: 60px;
       @include typography(24, 24, 600, #262626, $font-family);
       @media screen and (max-width: 1440px) {
         @include typography(20, 20, 600, #262626, $font-family);
@@ -2595,9 +2465,9 @@
       }
     }
     .poetry-text-container {
-      @include flex-box(column, start, start, na, 38);
-      @media screen and (max-width: 1440px) {
-        gap: 20px;
+      @include flex-box(column, start, start, na, 24);
+      @media screen and (max-width: 992px) {
+        gap: 10px;
       }
       p {
         margin: 0;
@@ -2619,6 +2489,9 @@
       margin-bottom: 60px;
     }
 
+    a {
+      text-decoration: none;
+    }
     .profile-info {
       @include flex-box(na, start, center, na, na);
       .profile-div {
@@ -2730,12 +2603,18 @@
         @include flex-box(na, space-between, center, na, na);
         .left-view {
           @include flex-box(na, start, center, na, 36);
+          @media screen and (max-width: 1200px) {
+            gap: 10px;
+          }
           p {
             margin: 0;
           }
         }
         .right-view {
           @include flex-box(na, space-between, center, na, 24);
+          @media screen and (max-width: 1200px) {
+            gap: 10px;
+          }
         }
       }
 
@@ -2752,7 +2631,7 @@
           height: 120px;
           padding: 16px;
           font-size: 16px;
-
+          box-sizing: border-box;
           outline: none; /* Remove default focus outline */
           background-color: #f1f1f1;
           transition: all 0.3s ease-in-out;
@@ -2895,7 +2774,12 @@
         // padding: 60px 0;
         padding-top: 60px;
         padding-bottom: 20px;
-        @include flex-box(row, space-between, center, wrap, na);
+        @include flex-box(row, space-between, center, wrap, 10);
+      }
+      .footer-content {
+        @media screen and (max-width: 580px) {
+          width: auto !important;
+        }
       }
 
       .logo {
@@ -2948,6 +2832,9 @@
       }
       .consult {
         @include flex-box(na, na, center, na, 24);
+        @media screen and (max-width: 580px) {
+          gap: 10px;
+        }
         .p-consult {
           @include typography(20, 28, 500, #262626, $font-family);
           @media screen and (max-width: 1440px) {
@@ -3121,21 +3008,21 @@
         background-color: #f6f6f6;
         @media screen and (max-width: 1440px) {
           height: 242px;
-          width: 18%;
+          width: 22%;
         }
         @media screen and (max-width: 1200px) {
           padding: 17px;
-          width: 20%;
         }
         @media screen and (max-width: 900px) {
           width: 40%;
+          height: 172px;
         }
         @media screen and (max-width: 768px) {
           width: 40%;
-          height: auto;
         }
         @media screen and (max-width: 580px) {
           order: 1;
+          height: auto;
           width: 100%;
           background-color: #ffffff;
           padding: 0;
@@ -3146,10 +3033,10 @@
             @include typography(24, 28, 400, #d8d8d8, $font-family);
           }
           @media screen and (max-width: 992px) {
-            @include typography(18, 22, 400, #d8d8d8, $font-family);
+            @include typography(20, 22, 400, #d8d8d8, $font-family);
           }
-          @media screen and (max-width: 375px) {
-            @include typography(16, 19, 400, #d8d8d8, $font-family);
+          @media screen and (max-width: 580px) {
+            @include typography(18, 19, 400, #d8d8d8, $font-family);
             margin-bottom: 10px;
           }
         }
@@ -3163,10 +3050,11 @@
             border: none;
             outline: none;
             background-color: transparent;
+            min-width: fit-content;
             @media screen and (max-width: 1440px) {
               @include typography(13, 18, 400, #6f6d66, $font-family);
             }
-            @media screen and (max-width: 375px) {
+            @media screen and (max-width: 580px) {
               margin: 5px 0;
             }
           }
@@ -3174,6 +3062,10 @@
             cursor: pointer;
             @include dimensions(10, 12);
           }
+        }
+        #newsletter-message{
+          margin: 0 !important;
+          @include typography(18, 22, 400, rgb(255, 0, 0), $font-family);
         }
       }
       .logo-container-mobile {

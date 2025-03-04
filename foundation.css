@@ -913,26 +913,26 @@
 
 .normal-text {
   font-size: 16px;
-  line-height: 25px;
-  font-weight: 400;
-  color: #535353;
+  line-height: 26px;
+  font-weight: 500;
+  color: #444444;
   font-family: "Instrument Sans", serif;
 }
 @media screen and (max-width: 1440px) {
   .normal-text {
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #535353;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #444444;
     font-family: "Instrument Sans", serif;
   }
 }
 @media screen and (max-width: 580px) {
   .normal-text {
     font-size: 12px;
-    line-height: 16px;
-    font-weight: 400;
-    color: #535353;
+    line-height: 14px;
+    font-weight: 500;
+    color: #444444;
     font-family: "Instrument Sans", serif;
   }
 }
@@ -1057,34 +1057,16 @@
 }
 
 .poetry-text {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 500;
   color: #444444;
   font-family: "Instrument Sans", serif;
 }
-@media screen and (max-width: 1720px) {
-  .poetry-text {
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #444444;
-    font-family: "Instrument Sans", serif;
-  }
-}
 @media screen and (max-width: 1440px) {
   .poetry-text {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 18px;
-    font-weight: 400;
-    color: #444444;
-    font-family: "Instrument Sans", serif;
-  }
-}
-@media screen and (max-width: 992px) {
-  .poetry-text {
-    font-size: 16px;
-    line-height: 16px;
     font-weight: 400;
     color: #444444;
     font-family: "Instrument Sans", serif;
@@ -1092,17 +1074,8 @@
 }
 @media screen and (max-width: 768px) {
   .poetry-text {
-    font-size: 14px;
-    line-height: 14px;
-    font-weight: 400;
-    color: #444444;
-    font-family: "Instrument Sans", serif;
-  }
-}
-@media screen and (max-width: 580px) {
-  .poetry-text {
     font-size: 12px;
-    line-height: 12px;
+    line-height: 14px;
     font-weight: 400;
     color: #444444;
     font-family: "Instrument Sans", serif;

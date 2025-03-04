@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>Architechture</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -92,47 +92,33 @@
 
       <div class="about-slider-top">
           <div class="white-box">
-              <h6 class="white-box-header m-0">Architecture</h6>
+              <h6 class="white-box-header m-0">Art</h6>
               <div class="white-box-container">
                 <div class="white-box-content1 m-0">
-                  <p class="m-0">Offices</p>
-                </div>
-                <div class="white-box-content1 m-0">
-                    <p class="m-0">Residential</p>
-                </div>
-                <div class="white-box-content1 m-0">
-                  <p class="m-0">Institutional</p>
+                  <p class="m-0">Poetry</p>
+              </div>
+              <div class="white-box-content1 m-0">
+                <p class="m-0">Sketches</p>
+            </div>
+              <div class="white-box-content1 m-0">
+                  <p class="m-0">Water Color</p>
               </div>
               </div>
+             
           </div>
         
         <div class="black-box">
         </div>
       </div>
 
-     
     </div>
 
     <script>
       $(document).ready(function () {
-        // Open menu
-        $(".burger").click(function () {
-          $(".menu").toggleClass("active");
-        });
-      });
-    </script>
+      
 
-    <script>
-      document.getElementById("burger").addEventListener("click", function () {
-        this.classList.toggle("active"); // Toggle class on click
-      });
-    </script>
 
-    <script>
-      $(document).ready(function () {
-       
-
-          $(".black-box").click(function(){
+        $(".black-box").click(function(){
           $(".white-box").hide(); // Hides the clicked element
           $(this).css({
             "transition": "opacity 0.5s ease, visibility 0.5s ease, height .5s ease",
@@ -148,5 +134,24 @@
     
       });
     </script>
+
+    
+ 
+    <script>
+      $(document).ready(function () {
+        // Open menu
+        $(".burger").click(function () {
+          $(".menu").toggleClass("active");
+        });
+      });
+    </script>
+    
+    <script>
+      document.getElementById("burger").addEventListener("click", function () {
+        this.classList.toggle("active"); // Toggle class on click
+      });
+    </script>
+
+    
   </body>
 </html>

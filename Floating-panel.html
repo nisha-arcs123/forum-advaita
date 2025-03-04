@@ -391,36 +391,6 @@
   
       
 
-    <script>
-      $(document).ready(function() {
-          let images = [];
-          let currentIndex = 0;
-
-          $(".thumbnail").each(function(index) {
-              images.push($(this).attr("src"));
-          });
-
-          $(".thumbnail").click(function() {
-              currentIndex = images.indexOf($(this).attr("src"));
-              $("#carousel-img").attr("src", images[currentIndex]);
-              $(".carousel").fadeIn();
-          });
-
-          $(".close").click(function() {
-              $(".carousel").fadeOut();
-          });
-
-          $(".prev").click(function() {
-              currentIndex = (currentIndex - 1 + images.length) % images.length;
-              $("#carousel-img").attr("src", images[currentIndex]);
-          });
-
-          $(".next").click(function() {
-              currentIndex = (currentIndex + 1) % images.length;
-              $("#carousel-img").attr("src", images[currentIndex]);
-          });
-      });
-  </script>
       <script>
         $(document).ready(function () {
           // Open menu
