@@ -1150,7 +1150,7 @@
   background-color: #FFFFFF;
   z-index: 3;
 }
-.outer-wrapper .header-wrapper .header {
+.outer-wrapper .header-wrapper .header, .outer-wrapper .header-wrapper .scroll-header {
   height: 80px;
   display: flex;
   flex-direction: row;
@@ -1159,47 +1159,47 @@
   padding: 0 135px;
 }
 @media screen and (max-width: 1200px) {
-  .outer-wrapper .header-wrapper .header {
+  .outer-wrapper .header-wrapper .header, .outer-wrapper .header-wrapper .scroll-header {
     padding: 0 70px;
   }
 }
 @media screen and (max-width: 992px) {
-  .outer-wrapper .header-wrapper .header {
+  .outer-wrapper .header-wrapper .header, .outer-wrapper .header-wrapper .scroll-header {
     padding: 0 40px;
   }
 }
 @media screen and (max-width: 580px) {
-  .outer-wrapper .header-wrapper .header {
+  .outer-wrapper .header-wrapper .header, .outer-wrapper .header-wrapper .scroll-header {
     padding: 0 20px;
     height: 70px;
   }
 }
 @media screen and (max-width: 375px) {
-  .outer-wrapper .header-wrapper .header {
+  .outer-wrapper .header-wrapper .header, .outer-wrapper .header-wrapper .scroll-header {
     height: 60px;
   }
 }
-.outer-wrapper .header-wrapper .header a {
+.outer-wrapper .header-wrapper .header a, .outer-wrapper .header-wrapper .scroll-header a {
   text-decoration: none;
 }
-.outer-wrapper .header-wrapper .header .logo {
+.outer-wrapper .header-wrapper .header .logo, .outer-wrapper .header-wrapper .scroll-header .logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 @media screen and (max-width: 992px) {
-  .outer-wrapper .header-wrapper .header .logo img {
+  .outer-wrapper .header-wrapper .header .logo img, .outer-wrapper .header-wrapper .scroll-header .logo img {
     width: 23px;
     height: 34px;
   }
 }
 @media screen and (max-width: 375px) {
-  .outer-wrapper .header-wrapper .header .logo img {
+  .outer-wrapper .header-wrapper .header .logo img, .outer-wrapper .header-wrapper .scroll-header .logo img {
     width: 21px;
     height: 26px;
   }
 }
-.outer-wrapper .header-wrapper .header .logo .logo-heading {
+.outer-wrapper .header-wrapper .header .logo .logo-heading, .outer-wrapper .header-wrapper .scroll-header .logo .logo-heading {
   margin: 0;
   font-size: 23px;
   line-height: 28px;
@@ -1208,7 +1208,7 @@
   font-family: "Instrument Sans", serif;
 }
 @media screen and (max-width: 1440px) {
-  .outer-wrapper .header-wrapper .header .logo .logo-heading {
+  .outer-wrapper .header-wrapper .header .logo .logo-heading, .outer-wrapper .header-wrapper .scroll-header .logo .logo-heading {
     font-size: 18px;
     line-height: 24px;
     font-weight: 600;
@@ -1217,7 +1217,7 @@
   }
 }
 @media screen and (max-width: 375px) {
-  .outer-wrapper .header-wrapper .header .logo .logo-heading {
+  .outer-wrapper .header-wrapper .header .logo .logo-heading, .outer-wrapper .header-wrapper .scroll-header .logo .logo-heading {
     font-size: 16px;
     line-height: 18px;
     font-weight: 600;
@@ -1225,11 +1225,11 @@
     font-family: "Instrument Sans", serif;
   }
 }
-.outer-wrapper .header-wrapper .header .burger {
+.outer-wrapper .header-wrapper .header .burger, .outer-wrapper .header-wrapper .scroll-header .burger {
   display: none;
 }
 @media screen and (max-width: 998px) {
-  .outer-wrapper .header-wrapper .header .burger {
+  .outer-wrapper .header-wrapper .header .burger, .outer-wrapper .header-wrapper .scroll-header .burger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1239,12 +1239,12 @@
   }
 }
 @media screen and (max-width: 998px) and (max-width: 375px) {
-  .outer-wrapper .header-wrapper .header .burger {
+  .outer-wrapper .header-wrapper .header .burger, .outer-wrapper .header-wrapper .scroll-header .burger {
     width: 20px;
   }
 }
 @media screen and (max-width: 998px) {
-  .outer-wrapper .header-wrapper .header .burger span {
+  .outer-wrapper .header-wrapper .header .burger span, .outer-wrapper .header-wrapper .scroll-header .burger span {
     width: 100%;
     height: 3px;
     background-color: #333;
@@ -1252,17 +1252,17 @@
     transition: all 0.3s ease-in-out;
     display: block;
   }
-  .outer-wrapper .header-wrapper .header .burger.active span:nth-child(1) {
+  .outer-wrapper .header-wrapper .header .burger.active span:nth-child(1), .outer-wrapper .header-wrapper .scroll-header .burger.active span:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
   }
-  .outer-wrapper .header-wrapper .header .burger.active span:nth-child(2) {
+  .outer-wrapper .header-wrapper .header .burger.active span:nth-child(2), .outer-wrapper .header-wrapper .scroll-header .burger.active span:nth-child(2) {
     opacity: 0;
   }
-  .outer-wrapper .header-wrapper .header .burger.active span:nth-child(3) {
+  .outer-wrapper .header-wrapper .header .burger.active span:nth-child(3), .outer-wrapper .header-wrapper .scroll-header .burger.active span:nth-child(3) {
     transform: translateY(-12px) rotate(-45deg);
   }
 }
-.outer-wrapper .header-wrapper .header .navbar {
+.outer-wrapper .header-wrapper .header .navbar, .outer-wrapper .header-wrapper .scroll-header .navbar {
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -1272,19 +1272,19 @@
   margin: 0;
 }
 @media screen and (max-width: 1440px) {
-  .outer-wrapper .header-wrapper .header .navbar {
+  .outer-wrapper .header-wrapper .header .navbar, .outer-wrapper .header-wrapper .scroll-header .navbar {
     gap: 15px;
   }
 }
 @media screen and (max-width: 998px) {
-  .outer-wrapper .header-wrapper .header .navbar {
+  .outer-wrapper .header-wrapper .header .navbar, .outer-wrapper .header-wrapper .scroll-header .navbar {
     display: none;
   }
 }
-.outer-wrapper .header-wrapper .header .navbar::before, .outer-wrapper .header-wrapper .header .navbar::after {
+.outer-wrapper .header-wrapper .header .navbar::before, .outer-wrapper .header-wrapper .header .navbar::after, .outer-wrapper .header-wrapper .scroll-header .navbar::before, .outer-wrapper .header-wrapper .scroll-header .navbar::after {
   content: none !important;
 }
-.outer-wrapper .header-wrapper .header .navbar .nav-items a {
+.outer-wrapper .header-wrapper .header .navbar .nav-items a, .outer-wrapper .header-wrapper .scroll-header .navbar .nav-items a {
   font-size: 14px;
   line-height: 17px;
   font-weight: 500;
@@ -1293,10 +1293,10 @@
   cursor: pointer;
   text-decoration: none;
 }
-.outer-wrapper .header-wrapper .header .navbar .nav-items a:hover {
+.outer-wrapper .header-wrapper .header .navbar .nav-items a:hover, .outer-wrapper .header-wrapper .scroll-header .navbar .nav-items a:hover {
   color: #262626;
 }
-.outer-wrapper .header-wrapper .header .navbar .nav-items a.active {
+.outer-wrapper .header-wrapper .header .navbar .nav-items a.active, .outer-wrapper .header-wrapper .scroll-header .navbar .nav-items a.active {
   font-size: 14px;
   line-height: 17px;
   font-weight: 600;
@@ -1305,9 +1305,46 @@
   cursor: pointer;
 }
 @media screen and (max-width: 1200px) {
-  .outer-wrapper .header-wrapper .header .navbar .nav-items {
+  .outer-wrapper .header-wrapper .header .navbar .nav-items, .outer-wrapper .header-wrapper .scroll-header .navbar .nav-items {
     font-size: 14px;
   }
+}
+.outer-wrapper .header-wrapper .header {
+  display: none;
+}
+.outer-wrapper .header-wrapper .scroll-header {
+  height: 110px;
+}
+.outer-wrapper .header-wrapper .scroll-header .logo {
+  gap: 12px;
+}
+.outer-wrapper .header-wrapper .scroll-header .logo img {
+  width: 45px;
+  height: 66px;
+}
+.outer-wrapper .header-wrapper .scroll-header .logo .logo-heading {
+  font-size: 37px;
+  line-height: 46px;
+  font-weight: 600;
+  color: #262626;
+  font-family: "Instrument Sans", serif;
+}
+.outer-wrapper .header-wrapper .scroll-header .navbar .nav-items a {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  color: #444444;
+  font-family: "Instrument Sans", serif;
+}
+.outer-wrapper .header-wrapper .scroll-header .navbar .nav-items a button {
+  height: 48px;
+}
+.outer-wrapper .header-wrapper .scroll-header .navbar .nav-items a.active {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 700;
+  color: #262626;
+  font-family: "Instrument Sans", serif;
 }
 .outer-wrapper .header-wrapper .menu {
   display: none;

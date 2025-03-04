@@ -11,7 +11,7 @@
     border-bottom: 1px solid $header-border-color;
     background-color: $header-bg-color;
     z-index: 3;
-    .header {
+    .header ,.scroll-header{
       @include dimensions(80, na);
       @include flex-box(row, space-between, center, "na", "na");
       padding: 0 135px;
@@ -116,7 +116,35 @@
         }
       }
     }
+    .header{
+      display: none;
+    }
 
+    .scroll-header{
+      height: 110px;
+      .logo{
+        gap: 12px;
+        img{
+          @include dimensions(66,45);
+        }
+        .logo-heading{
+          @include typography(37, 46, 600, #262626, $font-family);
+        }
+      }
+      .navbar{
+        .nav-items {
+          a{
+            @include typography(18, 21, 500, #444444, $font-family);
+            button{
+              height: 48px;
+            }
+            &.active{
+              @include typography(18, 21, 700, #262626, $font-family);
+            }
+          }
+        }
+      }
+    }
     .menu {
       display: none;
       opacity: 0;
